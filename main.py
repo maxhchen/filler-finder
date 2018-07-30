@@ -53,11 +53,7 @@ class Description(webapp2.RequestHandler):
         self.response.write(template.render())
 
 app = webapp2.WSGIApplication([
-<<<<<<< HEAD
-    ('/', Home),
-=======
     ('/', HomePage),
     ('/description', Description),
     ('/search', Search),
->>>>>>> 96f44815b2865cf666e872db2172f2db27bbfbb8
 ], debug = True)
