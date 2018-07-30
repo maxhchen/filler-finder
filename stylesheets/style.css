@@ -2,7 +2,6 @@ body {
   background-color: #8fbaf3;
 }
 
-
 #map {
   background-color: lightblue;
   width: 80%;
@@ -12,7 +11,6 @@ body {
   margin: 0 auto;
 }
 
-<<<<<<< HEAD
 #searchBar {
   text-align: center;
   margin-bottom: 20px;
@@ -24,7 +22,8 @@ body {
 
 #searchBar button {
   width: 8%;
-=======
+}
+
 #header {
   text-align: center;
   padding-top: 2em;
@@ -37,5 +36,4 @@ h3 {
 
 h1 {
   font-family: "Merienda", sans-serif;
->>>>>>> 470f2cd9093b2dae592bacb7dff42c546b6f717f
 }
