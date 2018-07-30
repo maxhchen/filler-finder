@@ -17,6 +17,10 @@ function initMap() {
   //Custom Marker images
   let icon = "/images/test_droplet.png";
 
+
+
+
+
   //Generate list of marker coordinates
   let location_list = [
     {
@@ -24,7 +28,6 @@ function initMap() {
       type: 'info',
     },
   ]
-
 //Create markers using location_list
 location_list.forEach(function(feature) {
   let marker = new google.maps.Marker({
@@ -33,7 +36,7 @@ location_list.forEach(function(feature) {
     map: map,
   });
   marker.addListener("click", function() {
-    window.location.href = "/description?key={{ person.key.urlsafe() }}";
+  window.location.href = "/description?key={{filler.key.urlsafe()}}";
   });
 });
 
