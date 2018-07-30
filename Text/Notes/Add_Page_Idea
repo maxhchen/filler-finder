@@ -1,0 +1,4 @@
+Copy and modify the codeAddress() function in js but this time add an event
+listener to the submit button(with an id) get the address from the 'location'
+input. It will then take the address and place a marker while also converting
+it into a geocode to store as location in python. 
