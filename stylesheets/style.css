@@ -23,7 +23,7 @@ body {
 }
 
 #searchBar button {
-  width: 8%;
+  width: 50px;
 
 }
 
@@ -33,7 +33,7 @@ body {
 }
 
 h3 {
-  padding-bottom: 2.5em;
+  padding-bottom: .75em;
   font-family: "Cabin", sans-serif;
 }
 
