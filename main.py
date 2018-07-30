@@ -69,11 +69,13 @@ class AddFiller(webapp2.RequestHandler):
         templateVars = {
             "name" : self.request.get('name'),
             "location" : self.request.get('location'),
-            "type" : self.request.get('type'),
+            "fountain" : self.request.get('fountain'),
             "description" : self.request.get('description'),
             "company" : self.request.get('company'),
         }
         self.response.write(template.render(templateVars))
+        #### self.response.write(self.request.POST) 
+
 
 app = webapp2.WSGIApplication([
     ('/', HomePage),
