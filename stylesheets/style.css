@@ -14,3 +14,12 @@ body {
   box-shadow: 0 0 30px grey;
   margin: 0 auto;
 }
+
+#header {
+  text-align: center;
+  padding-top: 2em;
+}
+
+h3 {
+  padding-bottom: 2.5em;
+}
