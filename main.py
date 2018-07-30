@@ -22,7 +22,8 @@ class User(ndb.Model):
 
 class Comment(ndb.Model):
     message = ndb.StringProperty()
-    user = User()
+    user_key = ndb.KeyProperty() #store the user key to point to who posted it
+    filler_key = ndb.KeyProperty() #store the filler key in which the comment is in
 
 class Filler(ndb.Model):
     name = ndb.StringProperty()
