@@ -6,7 +6,7 @@ function initMap() {
   let location = {lat: 37.403619, lng: -122.031625};
 
   //The Map
-  let map = new google.maps.Map(document.getElementById('map'), {
+  let map = new google.maps.Map(document.querySelector('#map'), {
       zoom: 16,
       center: location,
     });
