@@ -28,7 +28,6 @@ class Comment(ndb.Model):
 class Filler(ndb.Model):
     name = ndb.StringProperty()
     type = ndb.StringProperty()
-    email = ndb.StringProperty()
     location = ndb.StringProperty()
     picture = ndb.BlobProperty()
     #company = ndb.DateProperty()
@@ -37,6 +36,7 @@ class Filler(ndb.Model):
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
+
         template = env.get_template("templates/home.html")
         self.response.write(template.render())
 

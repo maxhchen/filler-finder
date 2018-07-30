@@ -13,4 +13,7 @@ function initMap() {
 
   //Markers
   let testMarker = new google.maps.Marker({position: location, map: map});
+
+  // Add way to find user's current location
+  // https://developers.google.com/maps/documentation/javascript/geolocation
 }
