@@ -13,14 +13,23 @@ function initMap() {
       url: '/description',
     });
 
-  //Markers
-  let testMarker = new google.maps.Marker({position: location, map: map});
+  //Custom Marker images
+  let icon = "/images/test_droplet.png";
 
-// Add way to find user's current location
-// https://developers.google.com/maps/documentation/javascript/geolocation
-// Implement filtering for locations
-// https://appendto.com/2016/09/advanced-google-maps-with-javascript-filtering-and-displaying-information/
+  //Generate list of marker coordinates
+  let location_list = [
+    {
+      position: new google.maps.LatLng(37.403619, -122.031625),
+      type: 'info'
+    },
+  ]
 
-
-
+  //Create markers using location_list
+location_list.forEach(function(feature) {
+  let marker = new google.maps.Marker({
+    position: feature.position,
+    icon: icon,
+    map: map,
+  });
+});
 }
