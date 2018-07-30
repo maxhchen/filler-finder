@@ -1,10 +1,7 @@
 //API key = AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA
 let API_KEY = 'AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA';
 
-
-
 function initMap() {
-
   //Locations
   let location = {lat: 37.403619, lng: -122.031625};
 
@@ -26,7 +23,7 @@ function initMap() {
     },
   ]
 
-  //Create markers using location_list
+//Create markers using location_list
 location_list.forEach(function(feature) {
   let marker = new google.maps.Marker({
     position: feature.position,
@@ -36,11 +33,5 @@ location_list.forEach(function(feature) {
   marker.addListener("click", function() {
     window.location.href = "/description?key={{ person.key.urlsafe() }}";
   });
-
 });
-
-
-
-
-
 }
