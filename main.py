@@ -31,8 +31,8 @@ class Filler(ndb.Model):
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
-        template = env.get_template("/")
-        self.response.write(template.render(templateVars))
+        template = env.get_template("templates/home.html")
+        self.response.write(template.render())
 
 class Description(webapp2.RequestHandler):
     def get(self):
