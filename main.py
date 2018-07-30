@@ -17,6 +17,8 @@ env = jinja2.Environment(
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
+        template = env.get_template("templates/clicky.html")
+        self.response.write(template.render(templateVars))
         #read request
 
         #redirect to DB
@@ -25,6 +27,11 @@ class MainPage(webapp2.RequestHandler):
 
     # def post(self):
 
+class Description(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template("templates/description.html")
+        self.response.write(template.render())
+
 app = webapp2.WSGIApplication([
-    ('/', MainPage),
+    ('/', Home),
 ], debug = True)
