@@ -2,9 +2,8 @@
 let API_KEY = 'AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA';
 let geocoder;
 
-
-
 function initMap() {
+
   geocoder = new google.maps.Geocoder();
   //Locations
   let location = {lat: 37.403619, lng: -122.031625};
@@ -27,7 +26,7 @@ function initMap() {
     },
   ]
 
-  //Create markers using location_list
+//Create markers using location_list
 location_list.forEach(function(feature) {
   let marker = new google.maps.Marker({
     position: feature.position,
@@ -37,8 +36,8 @@ location_list.forEach(function(feature) {
   marker.addListener("click", function() {
     window.location.href = "/description?key={{ person.key.urlsafe() }}";
   });
-
 });
+
 
 //Give the button an event listener so that when clicked it will run codeAddress()
 document.querySelector('#enterAddress').addEventListener('click', e=> {
@@ -63,4 +62,5 @@ function codeAddress(geocoder, map) {
         alert('Something went wrong: ' + status);
       }
     });
+
 }
