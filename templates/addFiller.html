@@ -1,18 +1,37 @@
 <!DOCTYPE html>
-<link rel='stylesheet' href='stylesheets/style.css' />
+<link rel='stylesheet' href='stylesheets/style.css'/>
+<link href="https://fonts.googleapis.com/css?family=Cabin|Merienda" rel="stylesheet">
 <title>Add a Filler!</title>
 
-<form action="/add" method="post">
-  Location (approximate street address, city, state):<input name='location'><br><br>
-  Company (if known):<input name='company'><br><br>
-  Type:
-  <select>
+<style>
+  #form {
+    background-color: lightgrey;
+    padding: 10px;
+    max-width: 50%;
+    margin: 0 auto;
+    font-family: "Cabin", sans-serif;
+    font-size: 15px;
+    background: rgba(174, 174, 174, .5);
+  }
+</style>
 
-    <option name="type" value="water_fountain">Water Fountain</option>
-    <option name="type" value="bottle_filler">Bottle Filler</option>
-    <option name="type" value="gallon_filler">Gallon Filler</option>
-  </select><br><br>
-  Description of filler (the more info, the better!):<input name='description'><br><br>
-  <input type="submit" value="Add Filler!"/>
-</form>
+<div id='header'>
+  <h1> Filler Finder </h1>
+  <h3> Add a Filler! </h3>
+</div>
+
+<div id='form'>
+  <form action="/add" method="post">
+    Location (approximate street address, city, state): <input name='location' size=50%><br><br>
+    Company (if known): <input name='company'><br><br>
+    Type:
+    <select>
+      <option name="type" value="water_fountain">Water Fountain</option>
+      <option name="type" value="bottle_filler">Bottle Filler</option>
+      <option name="type" value="gallon_filler">Gallon Filler</option>
+    </select><br><br>
+    Description of filler (the more info, the better!): <input name='description'><br><br>
+    <input type="submit" value="Add Filler!"/>
+  </form>
 <!-- form does not push to the right place yet -->
+</div>
