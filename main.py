@@ -29,7 +29,8 @@ class Filler(ndb.Model):
     type = ndb.StringProperty()
     location = ndb.StringProperty()
     picture = ndb.BlobProperty()
-    #company = ndb.DateProperty()
+    description = ndb.StringProperty()
+    company = ndb.DateProperty()
 
 #######################################
 
@@ -58,8 +59,20 @@ class Search(webapp2.RequestHandler):
         template = env.get_template("templates/search.html")
         self.response.write(template.render())
 
+class AddFiller(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template("templates/addFiller.html")
+        self.response.write(template.render())
+    def post(self):
+        name = self.request.get('name')
+        location = self.request.get('location')
+        type = self.request.get('type')
+        description = self.request.get('description')
+        company = self.request.get('company')
+
 app = webapp2.WSGIApplication([
     ('/', HomePage),
     ('/description', Description),
     ('/search', Search),
+    ('/add', AddFiller),
 ], debug = True)
