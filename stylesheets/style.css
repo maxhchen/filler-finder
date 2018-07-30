@@ -2,7 +2,9 @@ body {
   background-color: #8fbaf3;
 }
 
+
 #map {
+  background-color: lightblue;
   width: 80%;
   height: 600px;
   border: 1px solid grey;
