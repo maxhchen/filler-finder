@@ -60,7 +60,7 @@ function codeAddress(geocoder, map) {
         // });
 
       } else {
-        alert('Geocode was not successful for the following reason: ' + status);
+        alert('Something went wrong: ' + status);
       }
     });
 }
