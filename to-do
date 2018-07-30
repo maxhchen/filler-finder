@@ -12,3 +12,8 @@ Max   Link Filler Model to Marker and pass key
       Put border on droplet icon
 
       Put minimap focused on filler on description page after clicking on marker
+
+Pass templateVars to html, use js to get vars from html
+
+put list of Fillers into templateVars and passs that into home.html
+Use jinja to do a script loop to create all the markers, and be clickable
