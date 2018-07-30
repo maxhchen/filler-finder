@@ -3,7 +3,6 @@ let API_KEY = 'AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA';
 let geocoder;
 
 function initMap() {
-
   geocoder = new google.maps.Geocoder();
   //Locations
   let location = {lat: 37.403619, lng: -122.031625};
@@ -62,5 +61,4 @@ function codeAddress(geocoder, map) {
         alert('Something went wrong: ' + status);
       }
     });
-
 }
