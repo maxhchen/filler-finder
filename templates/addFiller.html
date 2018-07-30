@@ -1,19 +1,18 @@
 <!DOCTYPE html>
+<link rel='stylesheet' href='stylesheets/style.css' />
 <title>Add a Filler!</title>
 
-<!-- name = self.request.get('name')
-    location = self.request.get('location')
-    type = self.request.get('type')
-    description = self.request.get('description')
-    company = self.request.get('company') -->
-
-<form action="/" method="post">
+<form action="/add" method="post">
   Location (approximate street address, city, state):<input name='location'><br><br>
   Company (if known):<input name='company'><br><br>
   Type:
   <select>
+
     <option name="type" value="water_fountain">Water Fountain</option>
     <option name="type" value="bottle_filler">Bottle Filler</option>
     <option name="type" value="gallon_filler">Gallon Filler</option>
   </select><br><br>
-  Description of filler (the more info, the better!):<input name='description'><br>
+  Description of filler (the more info, the better!):<input name='description'><br><br>
+  <input type="submit" value="Add Filler!"/>
+</form>
+<!-- form does not push to the right place yet -->

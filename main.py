@@ -63,12 +63,17 @@ class AddFiller(webapp2.RequestHandler):
     def get(self):
         template = env.get_template("templates/addFiller.html")
         self.response.write(template.render())
+
     def post(self):
-        name = self.request.get('name')
-        location = self.request.get('location')
-        type = self.request.get('type')
-        description = self.request.get('description')
-        company = self.request.get('company')
+        template = env.get_template("templates/addFiller.html")
+        templateVars = {
+            "name" : self.request.get('name'),
+            "location" : self.request.get('location'),
+            "type" : self.request.get('type'),
+            "description" : self.request.get('description'),
+            "company" : self.request.get('company'),
+        }
+        self.response.write(template.render(templateVars))
 
 app = webapp2.WSGIApplication([
     ('/', HomePage),
