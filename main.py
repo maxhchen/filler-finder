@@ -9,7 +9,9 @@ import time
 
 from google.appengine.api import users #to login through g-acc.
 from google.appengine.ext import ndb
+from google.appengine.api import images
 
+# jinja2 Environment
 env = jinja2.Environment(
     loader = jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
@@ -26,8 +28,12 @@ class Comment(ndb.Model):
 class Filler(ndb.Model):
     name = ndb.StringProperty()
     type = ndb.StringProperty()
-    #company = ndb.DateProperty()
     email = ndb.StringProperty()
+    location = ndb.StringProperty()
+    picture = ndb.BlobProperty()
+    #company = ndb.DateProperty()
+
+#######################################
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
@@ -36,8 +42,17 @@ class HomePage(webapp2.RequestHandler):
 
 class Description(webapp2.RequestHandler):
     def get(self):
+        # get and display correct filler from urlsafe_key
+        urlsafe_key = self.request.get("key")
+        key = ndb.Key(urlsafe = urlsafe_key)
+        filler = key.get()
+
+        templateVars = {
+        "filler" : filler,
+        }
+
         template = env.get_template("templates/description.html")
-        self.response.write(template.render())
+        self.response.write(template.render(templateVars))
 
 class Search(webapp2.RequestHandler):
     def get(self):
