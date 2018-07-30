@@ -1,6 +1,8 @@
 //API key = AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA
 let API_KEY = 'AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA';
 
+
+
 function initMap() {
 
   //Locations
@@ -20,7 +22,7 @@ function initMap() {
   let location_list = [
     {
       position: new google.maps.LatLng(37.403619, -122.031625),
-      type: 'info'
+      type: 'info',
     },
   ]
 
@@ -31,5 +33,14 @@ location_list.forEach(function(feature) {
     icon: icon,
     map: map,
   });
+  marker.addListener("click", function() {
+    window.location.href = "/description?key={{ person.key.urlsafe() }}";
+  });
+
 });
+
+
+
+
+
 }
