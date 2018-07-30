@@ -1,6 +1,5 @@
 #run: dev_appserver.py app.yaml
 #Go to console.google.com
-
 import webapp2
 import jinja2
 import os
