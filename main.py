@@ -15,6 +15,20 @@ env = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+class User(ndb.Model):
+    name = ndb.StringProperty()
+    email = ndb.StringProperty()
+
+class Comment(ndb.Model):
+    message = ndb.StringProperty()
+    user = User()
+
+class Filler(ndb.Model):
+    name = ndb.StringProperty()
+    type = ndb.StringProperty()
+    #company = ndb.DateProperty()
+    email = ndb.StringProperty()
+
 class HomePage(webapp2.RequestHandler):
     def get(self):
         template = env.get_template("/")
