@@ -11,4 +11,9 @@ function initMap() {
 
 // Add way to find user's current location
 // https://developers.google.com/maps/documentation/javascript/geolocation
+// Implement filtering for locations
+// https://appendto.com/2016/09/advanced-google-maps-with-javascript-filtering-and-displaying-information/
+
+
+
 }
