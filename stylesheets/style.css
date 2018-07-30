@@ -9,3 +9,16 @@ body {
   box-shadow: 0 0 30px grey;
   margin: 0 auto;
 }
+
+#searchBar {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#searchBar input {
+  width: 90%;
+}
+
+#searchBar button {
+  width: 8%;
+}

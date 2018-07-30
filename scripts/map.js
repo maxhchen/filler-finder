@@ -2,6 +2,7 @@
 let API_KEY = 'AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA';
 
 function initMap() {
+
   //Locations
   let location = {lat: 37.403619, lng: -122.031625};
 
@@ -9,6 +10,7 @@ function initMap() {
   let map = new google.maps.Map(document.querySelector('#map'), {
       zoom: 16,
       center: location,
+      url: '/description',
     });
 
   //Markers
