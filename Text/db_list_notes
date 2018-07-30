@@ -1,0 +1,38 @@
+1. Structure Property <-- Not efficient
+
+2. Key Property
+
+class Video(ndb.Model):
+  blah blah
+
+class Comment(ndb.Model):
+  text = ndb.StringProperty()
+  author = ndb.StringProperty()
+  video_key = ndb.KeyProperty() <--
+
+When a video is made, a key is generated with it therefore:
+
+    newComment = Comment(author = 'Tom', text = 'Cats are great', video_key = video.key)
+    newComment.put()
+
+
+Let's say you want a comment to be linked to multiple videos then:
+    class VideoCommentLink(ndb.Model):
+      video_key = ndb.KeyProperty()
+      comment_key = ndb.KeyProperty()
+
+<------------------------>
+
+class Comment(ndb.Model):
+  message = blah
+  user_key = ndb.KeyProperty()
+  filler_key = ndb.KeyProperty()
+
+current_user = User(name='Bob', email='blah@gmail.com')
+current_filler = Filler(name='BlahFiller', type='water fountain??', location='blah blah')
+
+current_user.put()
+current_filler.put()
+
+comment = Comment(message='blah blah', user_key=current_user.key, filler_key=current_filler.key)
+comment.put()

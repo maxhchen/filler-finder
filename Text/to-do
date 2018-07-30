@@ -21,5 +21,3 @@ Pass templateVars to html, use js to get vars from html
 put list of Fillers into templateVars and passs that into home.html
 Use jinja to do a script loop to create all the markers, and be clickable
 >>>>>>> 9ea31070f459fab5607f0e7ad57cb9f523ff4c40
-
-- make it so that users need to sign in/have an account in order to add filler
