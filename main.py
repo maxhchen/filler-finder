@@ -17,13 +17,40 @@ env = jinja2.Environment(
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
+<<<<<<< HEAD
         template = env.get_template("templates/clicky.html")
         self.response.write(template.render(templateVars))
         #read request
+=======
+        #1 read request
+>>>>>>> 96f44815b2865cf666e872db2172f2db27bbfbb8
 
         #2 read/write from/to database
 
         #3 render response
+<<<<<<< HEAD
+=======
+
+    # def post(self):
+
+class Description(webapp2.RequestHandler):
+    def get(self):
+        #1 read request
+
+        #2 read/write from/to database
+
+        #3 render response
+
+    # def post(self):
+
+class Search(webapp2.RequestHandler):
+    def get(self):
+        #1 read request
+
+        #2 read/write from/to database
+
+        #3 render response
+>>>>>>> 96f44815b2865cf666e872db2172f2db27bbfbb8
 
     # def post(self):
 
