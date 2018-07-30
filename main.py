@@ -10,7 +10,6 @@ import time
 from google.appengine.api import users #to login through g-acc.
 from google.appengine.ext import ndb
 
-
 env = jinja2.Environment(
     loader = jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
@@ -25,7 +24,6 @@ class MainPage(webapp2.RequestHandler):
         #render response
 
     # def post(self):
-
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
