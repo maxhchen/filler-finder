@@ -15,16 +15,38 @@ env = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-class MainPage(webapp2.RequestHandler):
+class HomePage(webapp2.RequestHandler):
     def get(self):
-        #read request
+        #1 read request
 
-        #redirect to DB
+        #2 read/write from/to database
 
-        #render response
+        #3 render response
+
+    # def post(self):
+
+class Description(webapp2.RequestHandler):
+    def get(self):
+        #1 read request
+
+        #2 read/write from/to database
+
+        #3 render response
+
+    # def post(self):
+
+class Search(webapp2.RequestHandler):
+    def get(self):
+        #1 read request
+
+        #2 read/write from/to database
+
+        #3 render response
 
     # def post(self):
 
 app = webapp2.WSGIApplication([
-    ('/', MainPage),
+    ('/', HomePage),
+    ('/description', Description),
+    ('/search', Search),
 ], debug = True)
