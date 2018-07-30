@@ -37,9 +37,17 @@ class Filler(ndb.Model):
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
+        filler = Filler(name="test", type="fountain", location="6627 wildwood court").put()
 
+        counter = Filler.query().get()
+        if not counter:
+            counter = Filler(name="test", type="fountain", location="6627 Wildwood court")
+
+        templateVars = {
+        "filler" : filler,
+        }
         template = env.get_template("templates/home.html")
-        self.response.write(template.render())
+        self.response.write(template.render(templateVars))
 
 class Description(webapp2.RequestHandler):
     def get(self):
@@ -75,7 +83,7 @@ class AddFiller(webapp2.RequestHandler):
             "company" : self.request.get('company'),
         }
         self.response.write(template.render(templateVars))
-        #### self.response.write(self.request.POST) 
+        #### self.response.write(self.request.POST)
 
 
 app = webapp2.WSGIApplication([
