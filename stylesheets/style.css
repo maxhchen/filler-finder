@@ -1,1 +1,9 @@
-body{background-color: beige}
+body {
+  background-color: skyblue;
+}
+
+#map {
+  width: 500px;
+  height: 400px;
+  border: 1px solid black;
+}
