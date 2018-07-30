@@ -13,11 +13,8 @@ Max   Link Filler Model to Marker and pass key
 
       Put minimap focused on filler on description page after clicking on marker
 
-<<<<<<< HEAD
       Add a way for users to input custom filler location
-=======
-Pass templateVars to html, use js to get vars from html
 
-put list of Fillers into templateVars and passs that into home.html
-Use jinja to do a script loop to create all the markers, and be clickable
->>>>>>> 9ea31070f459fab5607f0e7ad57cb9f523ff4c40
+      Pass templateVars to html, use js to get vars from html
+      put list of Fillers into templateVars and passs that into home.html
+      Use jinja to do a script loop to create all the markers, and be clickable
