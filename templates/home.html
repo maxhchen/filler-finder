@@ -6,28 +6,13 @@
 
 <style>
 
-/* #test {
-  background-color: rgba(100, 100, 100, .5);
-  background-image: url("images/download.jpg");
-  background-repeat: repeat;
-  text-align: center;
-  padding-top: 2em;
-} */
-
-  #title_style {
-    max-width: 1000px;
-    min-width: 100px;
-    margin: 0 auto;
-    text-align: left;
-    padding: 0
-  }
-
   #website_description_style {
     max-width: 1000px;
     min-width: 100px;
     margin: 0 auto;
     text-align: left;
     padding-left: 20px;
+    display: inline-block;
   }
 
   #bottles {
@@ -52,16 +37,6 @@
     margin-top: -10px;
   }
 
-  #test {
-    background: url("images/images.jpg") repeat;
-    padding: 5px;
-    max-width: 30%;
-    margin: left;
-    margin-top: 10px;
-    margin-left: 10px;
-    box-shadow: 0 0 30px #3880f4;
-    display: inline-block;
-  }
 
   #innerbox {
     margin: 20px;
@@ -69,12 +44,6 @@
     padding: 1px;
     box-shadow: 0 0 40px rgb(255, 255, 255);
     text-align: center;
-  }
-
-  #slogan {
-    display: inline-block;
-    float: right;
-    margin-right: 10px;
   }
 
   h1 {
@@ -87,10 +56,6 @@
 
 </style>
 
-<div id='test'>
-<div id='innerbox'>
-  <h1>Filler Finder</h1>
-
 {% if not current_user %}
   <a href = "{{login_url}}">
     <button> Login </button>
@@ -102,17 +67,17 @@
 {% endif %}
 
 <div id='header'>
+  <!-- <div id='test'>
+    <div id='innerbox'>
+      <h1>Filler Finder</h1>
+    </div>
+  </div> -->
   <div id='title_style'>
     <h1>💧 Filler Finder </h1>
   </div>
   <div id='website_description_style'>
     <h3> Locate the nearest water bottle filling station and save the planet, one plastic bottle at a time! </h3>
   </div>
-</div>
-
-<div id='slogan'>
-  <h3 align="center"><p> Find the nearest water bottle filling station & </p>
-    <p> save the planet, one plastic bottle at a time! </p></h3>
 </div>
 
 <div id='bottles'>

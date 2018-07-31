@@ -69,6 +69,26 @@ body {
   padding-top: 2em;
 }
 
+#test {
+  background: url("/images/images.jpg") repeat;
+  padding: 5px;
+  max-width: 30%;
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+  box-shadow: 0 0 30px #3880f4;
+  background-color: yellow;
+}
+
+#title_style {
+  max-width: 1000px;
+  min-width: 100px;
+  margin: 0 auto;
+  text-align: right;
+  padding: 0;
+  background-color: red;
+}
+
 h3 {
   padding-bottom: .75em;
   font-family: "Cabin", sans-serif;
