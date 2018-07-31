@@ -9,19 +9,13 @@ Max   Link Filler Model to Marker and pass key
 
       Implement filtering for locations https://appendto.com/2016/09/advanced-google-maps-with-javascript-filtering-and-displaying-information/
 
-      Put border on droplet icon
+✓     Put border on droplet icon
 
       Put minimap focused on filler on description page after clicking on marker
 
       Add a way for users to input custom filler location
 
-<<<<<<< HEAD
-Pass templateVars to html, use js to get vars from html
-put list of Fillers into templateVars and passs that into home.html
-Use jinja to do a script loop to create all the markers, and be clickable
-=======
       Pass templateVars to html, use js to get vars from html
->>>>>>> 03c63989f41493acce29844b5399de1636824aa2
 
       Put list of Fillers into templateVars and passs that into home.html
 
