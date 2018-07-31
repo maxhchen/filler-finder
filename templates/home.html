@@ -33,10 +33,19 @@
 
 </style>
 
+{% if not current_user %}
+  <a href = "{{login_url}}">
+    <button> Login </button>
+  </a>
+{% else %}
+  <a href = "{{logout_url}}">
+    <button> Logout </button>
+  </a>
+{% endif %}
 
 <div id='header'>
   <div id='title_style'>
-    <h1>💧Filler Finder </h1>
+    <h1>💧 Filler Finder </h1>
   </div>
   <div id='website_description_style'>
     <h3> Locate the nearest water bottle filling station and save the planet, one plastic bottle at a time! </h3>
@@ -54,27 +63,23 @@
 <!-- Prints out the map and the list of locations in the html so that it can be converted a marker with the following javascript -->
 <div id='map'>
 <script src = '/scripts/map.js'>
-  <script type="text/javascript">
+<script type = "text/javascript">
     {% for filler in filler_list %}
       geocoder.geocode( {'address': '{{filler.location}}'}, function(results, status) {
         if (status == 'OK'){
-        //Place a marker
         let marker = new google.maps.Marker({
           map: map,
           position: result[0].geometry.location,
         });
-
         marker.setMap(map);
       } else {
         alert('Boom: ' + status);
 
         }
       });
-
-
-    {% endfor %}
+{%endfor%}
+    </script>
   </script>
-</script>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA&callback=initMap">
   </script>
