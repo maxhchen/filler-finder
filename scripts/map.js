@@ -46,6 +46,8 @@ document.querySelector('#enterAddress').addEventListener('click', e=> {
   codeAddress(geocoder, map);
   });
 }
+//Change click for 'keypress'
+//Then also change to an if (e.key == 'Enter'){codeAddress(geocoder, map)}
 
 //Takes the address from the search bar and centers map to that location
 function codeAddress(geocoder, map) {
