@@ -37,14 +37,15 @@ class Filler(ndb.Model):
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
-        filler = Filler(name="test", type="fountain", location="6627 wildwood court").put()
+        fillers = Filler.query().fetch()
 
         counter = Filler.query().get()
         if not counter:
-            counter = Filler(name="test", type="fountain", location="6627 Wildwood court")
+            counter = Filler(name="test", type="fountain", location="6627 Wildwood court").put()
 
         templateVars = {
-        "filler" : filler,
+        "fillers" : fillers,
+        "counter" : counter,
         }
         template = env.get_template("templates/home.html")
         self.response.write(template.render(templateVars))

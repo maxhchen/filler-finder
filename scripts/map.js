@@ -52,6 +52,7 @@ document.querySelector('#enterAddress').addEventListener('click', e=> {
 //Takes the address from the search bar and centers map to that location
 function codeAddress(geocoder, map) {
   let address = document.querySelector('#address').value;
+  console.log(address)
   geocoder.geocode( { 'address': address}, function(results, status) {
       if (status == 'OK') {
         map.setCenter(results[0].geometry.location);
