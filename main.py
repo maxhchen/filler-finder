@@ -31,7 +31,7 @@ class Filler(ndb.Model):
     location = ndb.StringProperty()
     picture = ndb.BlobProperty()
     description = ndb.StringProperty()
-    company = ndb.DateProperty()
+    company = ndb.StringProperty()
 
 ######################################################################
 
@@ -75,12 +75,22 @@ class AddFiller(webapp2.RequestHandler):
 
     def post(self):
         template = env.get_template("templates/addFiller.html")
+
+        #Get the values from user entered info
+        name = self.request.get('name')
+        location = self.request.get('location')
+        type = self.request.get('type')
+        description = self.request.get('description')
+        company = self.request.get('company')
+
+        current_filler = Filler.query().filter(Filler.location == location).get()
+
+        if not current_filler:
+            current_filler = Filler(name = name, location = location, type = type, description = description, company = company)
+            current_filler.put()
+
         templateVars = {
-            "name" : self.request.get('name'),
-            "location" : self.request.get('location'),
-            "fountain" : self.request.get('fountain'),
-            "description" : self.request.get('description'),
-            "company" : self.request.get('company'),
+
         }
         self.response.write(template.render(templateVars))
         #### self.response.write(self.request.POST)
