@@ -122,7 +122,9 @@ h3 {
 
 h3 {
   padding-bottom: .75em;
-  font-family: "Cabin", sans-serif;}
+  font-family: "Cabin", sans-serif;
+}
+
 #searchBar input {
   height: 3em;
   border-radius: 10px;
