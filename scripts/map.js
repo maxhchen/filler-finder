@@ -114,7 +114,7 @@ function placeMarker(geocoder, map, address) {
     //Error
     } else
     {
-      alert('Boom: ' + status);
+      //('Boom: ' + status);
     }
   });
 }

@@ -43,16 +43,9 @@ h3 {
 #header {
   text-align: center;
   padding-top: 2em;
-
 }
 
-#innerbox {
-  margin: 20px;
-  background-color: rgba(255, 255, 255, .6);
-  padding: 1px;
-  box-shadow: 0 0 40px rgb(255, 255, 255);
-  text-align: center;
-}
+
 
 #map {
   background-color: lightblue;
@@ -96,39 +89,22 @@ h3 {
   margin-top: 5px;
 }
 
-#test {
-  background: url("/images/images.jpg") repeat;
-  padding: 5px;
-  max-width: 30%;
-  float: left;
-  margin-top: 10px;
-  margin-left: 10px;
-  box-shadow: 0 0 30px #3880f4;
-  background-color: yellow;
-}
-
-#title_style {
-  max-width: 1000px;
-  min-width: 100px;
-  margin: 0 auto;
-  text-align: right;
-  padding: 0;
-  background-color: red;
-  background: url("/images/images.jpg") repeat;
-  padding: 5px;
-  max-width: 30%;
-  color: white;
-}
-
-h3 {
-  padding-bottom: .75em;
-  font-family: "Cabin", sans-serif;}
 #searchBar input {
   height: 3em;
   border-radius: 10px;
   margin-right: 0;
   margin-top: 5px;
 }
+
+
+#title_style {
+  min-width: 100px;
+  background: url("/images/images.jpg") repeat;
+  padding: 2px 2px;
+  max-width: 230px;
+}
+
+
 
 #test {
   background: url("/images/images.jpg") repeat;
@@ -141,10 +117,10 @@ h3 {
   display: inline-block;
 }
 
-#title_style {
-  max-width: 1000px;
-  min-width: 100px;
-  margin: 0 auto;
-  text-align: left;
-  padding: 0
+#innerbox {
+  margin: 20px;
+  background-color: rgba(255, 255, 255, .6);
+  padding: 1px;
+  box-shadow: 0 0 40px rgb(255, 255, 255);
+  text-align: center;
 }
