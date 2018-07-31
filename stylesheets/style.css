@@ -12,6 +12,17 @@ body {
   padding-left: 20px;
 }
 
+#minimap {
+  background-color: lightblue;
+  width: 50%;
+  height: 300px;
+  border: 1px solid grey;
+  box-shadow: 0 0 30px grey;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 10px;
+}
+
 #searchBar {
   margin-bottom: 20px;
   align-items: left;

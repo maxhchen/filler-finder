@@ -1,24 +1,36 @@
-✓     Click on location to redirect
-
-Max   Link Filler Model to Marker and pass key
-
-      Add way to find user's current location
-      https://developers.google.com/maps/documentation/javascript/geolocation
+To-Do:
+Home:
+      Link Filler Model to Marker and pass key
 
       Implement filtering for locations https://appendto.com/2016/09/advanced-google-maps-with-javascript-filtering-and-displaying-information/
 
-✓     Put border on droplet icon
-
-      Put minimap focused on filler on description page after clicking on marker
-
-      Add a way for users to input custom filler location
-
-      Pass templateVars to html, use js to get vars from html
-
-      Put list of Fillers into templateVars and passs that into home.html
-
-      Use jinja to do a script loop to create all the markers, and be clickable
+      Implement User and Comment models
 
       Make it so that users need to sign in/have an account in order to add filler
 
       Sign-in page (users have to sign in in order to add filler)
+
+Description:
+      Display related comments on description page
+
+      Get directions to filler
+
+      Fix minimap on description.html to recenter on the clicked marker
+
+      Pass templateVars to html, use js to get vars from html
+      put list of Fillers into templateVars and passs that into home.html
+      Use jinja to do a script loop to create all the markers, and be clickable
+
+      Problem is js <--> python, not python --> html
+
+DONE:
+✓     Click on location to redirect
+
+✓     Put border on droplet icon
+
+✓     Add way to find user's current location
+      https://developers.google.com/maps/documentation/javascript/geolocation
+
+✓     Add a way for users to input custom filler location
+
+✓     Put minimap on description page
