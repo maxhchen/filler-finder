@@ -83,25 +83,18 @@
 
 <!-- Prints out the map and the list of locations in the html so that it can be converted a marker with the following javascript -->
 <div id='map'>
-<script src = '/scripts/map.js'>
-<script type = "text/javascript">
-    {% for filler in filler_list %}
-      geocoder.geocode( {'address': '{{filler.location}}'}, function(results, status) {
-        if (status == 'OK'){
-        let marker = new google.maps.Marker({
-          map: map,
-          position: result[0].geometry.location,
-        });
-        marker.setMap(map);
-      } else {
-        alert('Boom: ' + status);
+  <script src = '/scripts/map.js'></script>
 
-        }
-      });
-{%endfor%}
+    <!-- Places marker based on the database -->
+    <script>
+    function markerPlacement() {
+      {% for filler in filler_list %}
+        placeMarker(geocoder, map, '{{filler.location}}')
+      {% endfor %}
+    }
     </script>
-  </script>
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA&callback=initMap">
-  </script>
+
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA&callback=initMap">
+    </script>
 </div>
