@@ -44,9 +44,6 @@ function initMap() {
     codeAddress(geocoder, map);
   });
 
-  //Run the placemarker function
-  markerPlacement()
-
   //On page load attempt to recenter map at user location
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -94,25 +91,4 @@ function codeAddress(geocoder, map) {
         alert('Something went wrong: ' + status);
       }
     });
-}
-
-//Runs when database is loaded, is called in the home.html
-function placeMarker(geocoder, map, address) {
-
-  geocoder.geocode( {'address': address}, function(results, status)
-  {
-    if (status == 'OK'){
-    //Place a marker
-    let marker = new google.maps.Marker
-    ({
-      map: map,
-      position: results[0].geometry.location
-    });
-
-    //Error
-    } else
-    {
-      alert('Boom: ' + status);
-    }
-  });
 }
