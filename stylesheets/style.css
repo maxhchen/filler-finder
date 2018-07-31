@@ -41,3 +41,13 @@ h1 {
   font-family: "Merienda", sans-serif;
   text-shadow: 0 0 10px grey;
 }
+
+#description {
+  background-color: lightgrey;
+  padding: 10px;
+  max-width: 50%;
+  margin: 0 auto;
+  font-family: "Cabin", sans-serif;
+  font-size: 15px;
+  background: rgba(174, 174, 174, .5);
+}
