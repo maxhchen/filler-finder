@@ -13,6 +13,13 @@
     font-size: 15px;
     background: rgba(174, 174, 174, .5);
   }
+
+  label { width: 35%; display: inline-block;
+    text-align: right; max-width: 200px; margin-right: 5px;
+    margin-bottom: 8px; min-width: 52px; margin-top: 5px ;
+        }
+  input{display: inline-block;}
+
 </style>
 
 <div id='header'>
@@ -22,16 +29,17 @@
 
 <div id='form'>
   <form action="/add" method="post">
-    Location (approximate street address, city, state): <input name='location' size=60%><br><br>
-    Company (if known): <input name='company'><br><br>
-    Type:
+    <label>Location (approximate street address, city, state): </label> <input name='location' size=60%><br><br>
+    <label>Company (if known):</label> <input name='company'><br><br>
+    <label>Type:</label>
     <select name="type">
       <option value="Water Fountain">Water Fountain</option>
       <option value="Bottle Filler">Bottle Filler</option>
       <option value="Gallon Filler">Gallon Filler</option>
     </select><br><br>
-    Description of filler (the more info, the better!): <input name='description'><br><br>
+    <label>Description of filler (the more info, the better!):</label> <input name='description'><br><br>
     <input type="submit" value="Add Filler!"/>
+    <a href='/'> Or find one! <a>
   </form>
 <!-- form does not push to the right place yet -->
 </div>
