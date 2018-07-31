@@ -22,3 +22,5 @@ Max   Link Filler Model to Marker and pass key
       Use jinja to do a script loop to create all the markers, and be clickable
 
       Make it so that users need to sign in/have an account in order to add filler
+
+      Sign-in page (users have to sign in in order to add filler)
