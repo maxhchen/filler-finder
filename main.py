@@ -28,7 +28,8 @@ class Comment(ndb.Model):
 class Filler(ndb.Model):
     name = ndb.StringProperty()
     type = ndb.StringProperty()
-    location = ndb.StringProperty()
+    lat = ndb.FloatProperty()
+    long = ndb.FloatProperty()
     picture = ndb.BlobProperty()
     description = ndb.StringProperty()
     company = ndb.DateProperty()
