@@ -6,7 +6,7 @@ let geocoder;
 function initMap() {
   geocoder = new google.maps.Geocoder();
   //Initial location
-  let location = {lat: 38.9072, lng: -77.0369};
+  let location = {lat: 37.7749, lng: -122.4194};
 
   //The map
   let map = new google.maps.Map(document.querySelector('#map'), {
@@ -34,7 +34,7 @@ function initMap() {
       map: map,
     });
     marker.addListener("click", function() {
-      window.location.href = "/description?key={{filler.key.urlsafe()}}";
+      window.location.replace("/description?key={{filler.key.urlsafe()}}");
     });
   });
 
