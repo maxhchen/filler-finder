@@ -15,8 +15,18 @@ Max   Link Filler Model to Marker and pass key
 
       Add a way for users to input custom filler location
 
+<<<<<<< HEAD
 Pass templateVars to html, use js to get vars from html
 put list of Fillers into templateVars and passs that into home.html
 Use jinja to do a script loop to create all the markers, and be clickable
+=======
+      Pass templateVars to html, use js to get vars from html
+>>>>>>> 03c63989f41493acce29844b5399de1636824aa2
 
-- make it so that users need to sign in/have an account in order to add filler
+      Put list of Fillers into templateVars and passs that into home.html
+
+      Use jinja to do a script loop to create all the markers, and be clickable
+
+      Make it so that users need to sign in/have an account in order to add filler
+
+      Sign-in page (users have to sign in in order to add filler)

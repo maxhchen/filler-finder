@@ -14,8 +14,8 @@ function initMap() {
       url: '/description',
     });
 
-  //Custom Marker images
-  let icon = "/images/test_droplet.png";
+  //Custom Marker image(s)
+  let icon = "/images/Water_Droplet_Pin.png";
 
 
 

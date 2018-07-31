@@ -28,8 +28,9 @@ class Comment(ndb.Model):
 class Filler(ndb.Model):
     name = ndb.StringProperty()
     type = ndb.StringProperty()
-    lat = ndb.FloatProperty()
-    long = ndb.FloatProperty()
+    location = ndb.StringProperty()
+    #lat = ndb.FloatProperty()
+    #long = ndb.FloatProperty()
     picture = ndb.BlobProperty()
     description = ndb.StringProperty()
     company = ndb.DateProperty()
@@ -38,11 +39,11 @@ class Filler(ndb.Model):
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
-        filler = Filler(name="test", type="fountain", location="6627 wildwood court").put()
+        filler = Filler(name="test", type="test_type", location="test").put()
 
-        counter = Filler.query().get()
-        if not counter:
-            counter = Filler(name="test", type="fountain", location="6627 Wildwood court")
+        filler = Filler.query().get()
+        if not filler:
+            filler = Filler(name="test", type="test_type", location="test").put()
 
         templateVars = {
         "filler" : filler,
@@ -53,9 +54,11 @@ class HomePage(webapp2.RequestHandler):
 class Description(webapp2.RequestHandler):
     def get(self):
         # get and display correct filler from urlsafe_key
-        urlsafe_key = self.request.get("key")
-        key = ndb.Key(urlsafe = urlsafe_key)
-        filler = key.get()
+        #urlsafe_key = self.request.get("key")
+        #key = ndb.Key(urlsafe = urlsafe_key)
+        #filler = key.get()
+
+        filler = Filler.query().get()
 
         templateVars = {
         "filler" : filler,
