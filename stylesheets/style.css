@@ -1,5 +1,5 @@
 body {
-  background-color: #8fbaf3;
+  background-color: #D1DEFF;
 }
 
 #map {
@@ -17,14 +17,14 @@ body {
 }
 
 #searchBar input {
-  width: 70%;
-  height: 2em;
+  height: 3em;
   border-radius: 10px;
 }
 
 #searchBar button {
   width: 50px;
-
+  height: 3em;
+  border-radius: 5px
 }
 
 #header {
@@ -39,5 +39,5 @@ h3 {
 
 h1 {
   font-family: "Merienda", sans-serif;
-  text-shadow: 0 0 10px grey;
+  text-shadow: 0 0 20px antiquewhite;
 }
