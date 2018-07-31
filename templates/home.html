@@ -6,49 +6,78 @@
 
 <style>
 
-  #title_style{
-    max-width: 1000px; min-width: 100px; margin: 0 auto;
-    text-align: left;  padding: 0}
-  h1{ padding-left: 20px; padding-top: -50px}
-  #website_description_style{
-    max-width: 1000px; min-width: 100px; margin: 0 auto; text-align: left; padding-left: 20px
-  }
-
-  #bottles{
+  #website_description_style {
     max-width: 1000px;
+    min-width: 100px;
     margin: 0 auto;
-    text-align: center
+    text-align: left;
+    padding-left: 20px;
   }
 
-  #add_link_home{
-    display: inline-block;
-    padding: 10px;
+  #bottles {
+    max-width: 1000px;
+    min-width: 100px;
+    margin: 0 auto;
+    text-align: center;
+    padding-left: 20px;
   }
 
-  #searchBar{
+  a {
+    padding: 2px;
+    margin-top: -10px;
+  }
+
+  #slogan {
     display: inline-block;
-    max-width: 100%
+    float: right;
+    margin-right: 10px;
+  }
+
+  h1 {
+    text-align: right;
+    opacity: 1;
+    text-shadow: 0 0 10px darkgrey;
+    font-size: 1.5em;
+    padding: 0 2px;
   }
 
 </style>
 
+<div id='test'>
+  <div id='innerbox'>
+    <h1>Filler Finder</h1>
+  </div>
+</div>
+
+{% if not current_user %}
+  <a href = "{{login_url}}">
+    <button> Login </button>
+  </a>
+{% else %}
+  <a href = "{{logout_url}}">
+    <button> Logout </button>
+  </a>
+{% endif %}
 
 <div id='header'>
   <div id='title_style'>
-    <h1>💧Filler Finder </h1>
+    <h1>💧 Filler Finder </h1>
   </div>
   <div id='website_description_style'>
     <h3> Locate the nearest water bottle filling station and save the planet, one plastic bottle at a time! </h3>
   </div>
 </div>
 
+<div id='slogan'>
+  <h3 align="center"><p> Find the nearest water bottle filling station & </p>
+    <p> save the planet, one plastic bottle at a time! </p></h3>
+</div>
+
 <div id='bottles'>
   <div id='searchBar'>
     <input id='address' type='text' placeholder='Search'>
-    <button id='enterAddress'> Find! </button>
-  </div>
-  <div id='add_link_home'>
-      <h3><a href="/add">Add Filler</a>! </h3>
+    <button id='enterAddress'> Find! </button><br><br>
+    <h3> or <a href="/add">Add a Filler</a>! </h3>
   </div>
 </div>
 

@@ -19,7 +19,7 @@ env = jinja2.Environment(
 class User(ndb.Model):
     name = ndb.StringProperty()
     email = ndb.StringProperty()
-
+    
 class Comment(ndb.Model):
     message = ndb.StringProperty()
     user_key = ndb.KeyProperty() #store the user key to point to who posted it
@@ -39,6 +39,22 @@ class Filler(ndb.Model):
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
+        login_url = "/"
+        logout_url = "/"
+
+        current_user = users.get_current_user()
+        if current_user:
+            logging.info(current_user.user_id())
+
+
+        if not current_user:
+            print("no one logged in")
+            login_url = users.create_login_url('/')
+        else:
+            logging.info("This is the main handler")
+            logout_url = users.create_logout_url('/')
+
+
         filler = Filler.query().get()
         if not filler:
             filler = Filler(name="test_name_1", type="test_type", location="test_location", description="test filler #1").put()
@@ -46,6 +62,9 @@ class HomePage(webapp2.RequestHandler):
         filler_list = Filler.query().fetch()
 
         templateVars = {
+        "current_user" : current_user,
+        "login_url" : login_url,
+        "logout_url" : logout_url,
         "filler" : filler,
         "filler_list" : filler_list,
         }
@@ -98,6 +117,7 @@ class AddFiller(webapp2.RequestHandler):
 
         }
         self.response.write(template.render(templateVars))
+        self.redirect("/")
         #### self.response.write(self.request.POST)
 
 
