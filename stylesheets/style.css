@@ -1,5 +1,5 @@
 body {
-  background-color: #D1DEFF;
+  background-color: #E5EEFF;
 }
 
 #map {
@@ -37,7 +37,7 @@ body {
 
 #address{
   float: left;
-  width: 80%;
+  width: 90%;
   }
 
 #enterAddress{
@@ -48,7 +48,7 @@ body {
   height: 3em;
   border-radius: 10px;
   margin-right: 0;
-  margin-top: 5px
+  margin-top: 5px;
 
 }
 
