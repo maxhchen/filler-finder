@@ -5,23 +5,29 @@
 <link rel='stylesheet' href='/stylesheets/home.css'>
 <link href="https://fonts.googleapis.com/css?family=Cabin|Merienda" rel="stylesheet">
 
-<!--LOGIN BUTTON -->
-{% if not current_user %}
-  <a href = "{{login_url}}">
-    <button> Login </button>
-  </a>
-{% else %}
-  <a href = "{{logout_url}}">
-    <button> Logout </button>
-  </a>
-{% endif %}
 
+<div id='topPage'>
 <!-- TITLE -->
-<div id='titleStyle'>
-    <div id='innerbox'>
-    <h1>💧 Filler Finder </h1>
+  <div id='titleStyle'>
+      <div id='innerbox'>
+      <h1>💧 Filler Finder </h1>
+    </div>
+  </div>
+
+  <!--LOGIN BUTTON -->
+  <div id='log'>
+    {% if not current_user %}
+      <a href = "{{login_url}}">
+        <button> Login </button>
+      </a>
+    {% else %}
+      <a href = "{{logout_url}}">
+        <button> Logout </button>
+      </a>
+    {% endif %}
   </div>
 </div>
+
 <div id='slogan'>
   <h3> Find the nearest water bottle filling station and save the planet,
     one plastic bottle at a time! </h3>
