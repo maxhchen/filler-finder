@@ -1,5 +1,5 @@
 body {
-  background-color: #8fbaf3;
+  background-color: #D1DEFF;
 }
 
 #map {
@@ -11,20 +11,31 @@ body {
   margin: 0 auto;
 }
 
+#minimap {
+  background-color: lightblue;
+  width: 50%;
+  height: 300px;
+  border: 1px solid grey;
+  box-shadow: 0 0 30px grey;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 10px;
+}
+
 #searchBar {
   text-align: center;
   margin-bottom: 20px;
 }
 
 #searchBar input {
-  width: 70%;
-  height: 2em;
+  height: 3em;
   border-radius: 10px;
 }
 
 #searchBar button {
   width: 50px;
-
+  height: 3em;
+  border-radius: 5px
 }
 
 #header {
@@ -39,5 +50,15 @@ h3 {
 
 h1 {
   font-family: "Merienda", sans-serif;
-  text-shadow: 0 0 10px grey;
+  text-shadow: 0 0 20px antiquewhite;
+}
+
+#description {
+  background-color: lightgrey;
+  padding: 10px;
+  max-width: 50%;
+  margin: 0 auto;
+  font-family: "Cabin", sans-serif;
+  font-size: 15px;
+  background: rgba(174, 174, 174, .5);
 }
