@@ -61,7 +61,7 @@
     margin-left: 10px;
     box-shadow: 0 0 30px #3880f4;
     display: inline-block;
-}
+  }
 
   #innerbox {
     margin: 20px;
@@ -69,12 +69,13 @@
     padding: 1px;
     box-shadow: 0 0 40px rgb(255, 255, 255);
     text-align: center;
-}
+  }
+
   #slogan {
     display: inline-block;
     float: right;
     margin-right: 10px;
-}
+  }
 
   h1 {
     text-align: right;
@@ -82,13 +83,30 @@
     text-shadow: 0 0 10px darkgrey;
     font-size: 1.5em;
     padding: 0 2px;
-}
+  }
 
 </style>
 
 <div id='test'>
-  <div id='innerbox'>
-    <h1>Filler Finder</h1>
+<div id='innerbox'>
+  <h1>Filler Finder</h1>
+
+{% if not current_user %}
+  <a href = "{{login_url}}">
+    <button> Login </button>
+  </a>
+{% else %}
+  <a href = "{{logout_url}}">
+    <button> Logout </button>
+  </a>
+{% endif %}
+
+<div id='header'>
+  <div id='title_style'>
+    <h1>💧 Filler Finder </h1>
+  </div>
+  <div id='website_description_style'>
+    <h3> Locate the nearest water bottle filling station and save the planet, one plastic bottle at a time! </h3>
   </div>
 </div>
 
@@ -108,27 +126,23 @@
 <!-- Prints out the map and the list of locations in the html so that it can be converted a marker with the following javascript -->
 <div id='map'>
 <script src = '/scripts/map.js'>
-  <script type="text/javascript">
+<script type = "text/javascript">
     {% for filler in filler_list %}
       geocoder.geocode( {'address': '{{filler.location}}'}, function(results, status) {
         if (status == 'OK'){
-        //Place a marker
         let marker = new google.maps.Marker({
           map: map,
           position: result[0].geometry.location,
         });
-
         marker.setMap(map);
       } else {
         alert('Boom: ' + status);
 
         }
       });
-
-
-    {% endfor %}
+{%endfor%}
+    </script>
   </script>
-</script>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA&callback=initMap">
   </script>

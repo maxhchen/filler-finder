@@ -3,6 +3,8 @@ let API_KEY = 'AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA';
 let geocoder;
 //{lat: 37.403619, lng: -122.031625};
 
+https://maps.googleapis.com/maps/api/directions/json?&mode=transit&origin=frontera+el+hierro&destination=la+restinga+el+hierro&departure_time=1399995076&key=AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA
+
 function initMap() {
   geocoder = new google.maps.Geocoder();
   //Initial location
