@@ -19,7 +19,7 @@ env = jinja2.Environment(
 class User(ndb.Model):
     name = ndb.StringProperty()
     email = ndb.StringProperty()
-    
+
 class Comment(ndb.Model):
     message = ndb.StringProperty()
     user_key = ndb.KeyProperty() #store the user key to point to who posted it
@@ -74,11 +74,11 @@ class HomePage(webapp2.RequestHandler):
 class Description(webapp2.RequestHandler):
     def get(self):
         # get and display correct filler from urlsafe_key
-        #urlsafe_key = self.request.get("key")
-        #key = ndb.Key(urlsafe = urlsafe_key)
-        #filler = key.get()
+        urlsafe_key = self.request.get("key")
+        key = ndb.Key(urlsafe = urlsafe_key)
+        filler = key.get()
 
-        filler = Filler.query().get()
+        
 
         templateVars = {
         "filler" : filler,

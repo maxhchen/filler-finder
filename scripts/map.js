@@ -2,9 +2,6 @@
 let API_KEY = 'AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA';
 let geocoder;
 //{lat: 37.403619, lng: -122.031625};
-
-https://maps.googleapis.com/maps/api/directions/json?&mode=transit&origin=frontera+el+hierro&destination=la+restinga+el+hierro&departure_time=1399995076&key=AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA
-
 function initMap() {
   geocoder = new google.maps.Geocoder();
   //Initial location
@@ -28,9 +25,12 @@ function initMap() {
     },
   ]
 
+//let markers = '';
+  //console.log(typeof(markers));
+
   //Create markers using location_list
   location_list.forEach(function(feature) {
-    let marker = new google.maps.Marker({
+    marker = new google.maps.Marker({
       position: feature.position,
       icon: icon,
       map: map,
@@ -38,6 +38,7 @@ function initMap() {
     marker.addListener("click", function() {
       window.location.replace("/description?key={{filler.key.urlsafe()}}");
     });
+    //markers.append(marker);
   });
 
   //Give the button an event listener so that when clicked it will run codeAddress()

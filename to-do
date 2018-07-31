@@ -1,6 +1,6 @@
 To-Do:
 Home:
-      Link Filler Model to Marker and pass key
+✓     Link Filler Model to Marker and pass key
 
       Implement filtering for locations https://appendto.com/2016/09/advanced-google-maps-with-javascript-filtering-and-displaying-information/
 
@@ -18,11 +18,11 @@ Description:
 
       Fix minimap on description.html to recenter on the clicked marker
 
-      Pass templateVars to html, use js to get vars from html
-      put list of Fillers into templateVars and passs that into home.html
-      Use jinja to do a script loop to create all the markers, and be clickable
+✓     Pass templateVars to html, use js to get vars from html
+✓     put list of Fillers into templateVars and passs that into home.html
+✓     Use jinja to do a script loop to create all the markers, and be clickable
 
-      Problem is js <--> python, not python --> html
+✓     Problem is js <--> python, not python --> html
 
 DONE:
 ✓     Click on location to redirect
