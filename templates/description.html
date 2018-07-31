@@ -9,17 +9,16 @@
   <h3> Information for "{{ filler.name }}": </h3>
 </div>
 
-<div id='description'>
-  <p><u>Location:</u>  {{ filler.location }} </p>
-  <p><u>Type:</u> {{ filler.type }} </p>
-  <p><u>Company:</u> google</p>
-  <p><u>Description:</u> {{ filler.description }} </p>
-</div>
-
-
 <div id='minimap'>
   <script src = '/scripts/minimap.js'></script>
   <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA&callback=initMap">
   </script>
+</div>
+
+<div id='description'>
+  <p><u>Location:</u>  {{ filler.location }} </p>
+  <p><u>Type:</u> {{ filler.type }} </p>
+  <p><u>Company:</u> {{ filler.company }}</p>
+  <p><u>Description:</u> {{ filler.description }} </p>
 </div>
