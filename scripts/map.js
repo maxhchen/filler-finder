@@ -1,13 +1,14 @@
 //API key = AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA
 let API_KEY = 'AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA';
 let geocoder;
+//{lat: 37.403619, lng: -122.031625};
 
 function initMap() {
   geocoder = new google.maps.Geocoder();
-  //Locations
-  let location = {lat: 37.403619, lng: -122.031625};
+  //Initial location
+  let location = {lat: 38.9072, lng: -77.0369};
 
-  //The Map
+  //The map
   let map = new google.maps.Map(document.querySelector('#map'), {
       zoom: 16,
       center: location,
@@ -17,10 +18,6 @@ function initMap() {
   //Custom Marker image(s)
   let icon = "/images/Water_Droplet_Pin.png";
 
-
-
-
-
   //Generate list of marker coordinates
   let location_list = [
     {
@@ -28,24 +25,50 @@ function initMap() {
       type: 'info',
     },
   ]
-//Create markers using location_list
-location_list.forEach(function(feature) {
-  let marker = new google.maps.Marker({
-    position: feature.position,
-    icon: icon,
-    map: map,
-  });
-  marker.addListener("click", function() {
-  window.location.href = "/description?key={{filler.key.urlsafe()}}";
-  });
-});
 
-
-//Give the button an event listener so that when clicked it will run codeAddress()
-document.querySelector('#enterAddress').addEventListener('click', e=> {
-  codeAddress(geocoder, map);
+  //Create markers using location_list
+  location_list.forEach(function(feature) {
+    let marker = new google.maps.Marker({
+      position: feature.position,
+      icon: icon,
+      map: map,
+    });
+    marker.addListener("click", function() {
+      window.location.href = "/description?key={{filler.key.urlsafe()}}";
+    });
   });
+
+  //Give the button an event listener so that when clicked it will run codeAddress()
+  document.querySelector('#enterAddress').addEventListener('click', e=> {
+    codeAddress(geocoder, map);
+  });
+
+  //On page load attempt to recenter map at user location
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+      };
+      map.setCenter(pos);
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
 }
+
+//Tries to handle error with finding user location
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+    'Error: The Geolocation service failed.' :
+    'Error: Your browser doesn\'t support geolocation.');
+  infoWindow.open(map);
+}
+
 //Change click for 'keypress'
 //Then also change to an if (e.key == 'Enter'){codeAddress(geocoder, map)}
 
