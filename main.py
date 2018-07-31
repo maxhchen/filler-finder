@@ -19,7 +19,7 @@ env = jinja2.Environment(
 class User(ndb.Model):
     name = ndb.StringProperty()
     email = ndb.StringProperty()
-    
+
 class Comment(ndb.Model):
     message = ndb.StringProperty()
     user_key = ndb.KeyProperty() #store the user key to point to who posted it
@@ -117,6 +117,8 @@ class AddFiller(webapp2.RequestHandler):
 
         }
         self.response.write(template.render(templateVars))
+
+        time.sleep(3)
         self.redirect("/")
         #### self.response.write(self.request.POST)
 
