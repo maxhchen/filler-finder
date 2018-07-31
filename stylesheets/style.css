@@ -1,3 +1,5 @@
+/* this is organized!!! */
+
 body {
   background-color: #E5EEFF;
 }
@@ -12,48 +14,12 @@ h3 {
   font-family: "Cabin", sans-serif;
 }
 
-#add_link_home {
-  text-align: left;
-  margin-top: 5px;
-  display: inline-block;
-  padding: 10px;
-}
-
-#address {
-  float: left;
-  width: 90%;
-}
-
-#description {
-  background-color: lightgrey;
-  padding: 10px;
-  max-width: 50%;
-  margin: 0 auto;
-  font-family: "Cabin", sans-serif;
-  font-size: 15px;
-  background: rgba(174, 174, 174, .5);
-}
-
-#enterAddress{
-  font-size: 12px;
-}
-
-#header {
+#innerbox {
+  margin: 20px;
+  background-color: rgba(255, 255, 255, .6);
+  padding: 1px;
+  box-shadow: 0 0 40px rgb(255, 255, 255);
   text-align: center;
-  padding-top: 2em;
-}
-
-
-
-#map {
-  background-color: lightblue;
-  max-width: 1000px;
-  min-width: 400px;
-  height: 600px;
-  border: 1px solid grey;
-  box-shadow: 0 0 30px grey;
-  margin: 0 auto;
-  padding-left: 20px;
 }
 
 #minimap {
@@ -67,43 +33,6 @@ h3 {
   padding: 10px;
 }
 
-#searchBar {
-  margin-bottom: 20px;
-  align-items: left;
-  float: left;
-  width: 100%;
-  margin-top: 1.5em;
-  margin-left: 10px;
-  margin-right: 0;
-  display: inline-block;
-}
-
-#searchBar button {
-  width: 50px;
-  height: 3em;
-  border-radius: 5px;
-  float: left;
-  margin-left: 10px;
-  margin-top: 5px;
-}
-
-#searchBar input {
-  height: 3em;
-  border-radius: 10px;
-  margin-right: 0;
-  margin-top: 5px;
-}
-
-
-#title_style {
-  min-width: 100px;
-  background: url("/images/images.jpg") repeat;
-  padding: 2px 2px;
-  max-width: 230px;
-}
-
-
-
 #test {
   background: url("/images/images.jpg") repeat;
   padding: 5px;
@@ -115,10 +44,9 @@ h3 {
   display: inline-block;
 }
 
-#innerbox {
-  margin: 20px;
-  background-color: rgba(255, 255, 255, .6);
-  padding: 1px;
-  box-shadow: 0 0 40px rgb(255, 255, 255);
-  text-align: center;
+#titleStyle {
+  min-width: 100px;
+  background: url("/images/images.jpg") repeat;
+  padding: 2px 2px;
+  max-width: 230px;
 }

@@ -2,44 +2,10 @@
 <meta charset='utf-8' />
 <title>Filler Finder</title>
 <link rel='stylesheet' href='/stylesheets/style.css'>
+<link rel='stylesheet' href='/stylesheets/home.css'>
 <link href="https://fonts.googleapis.com/css?family=Cabin|Merienda" rel="stylesheet">
 
-<style>
-
-  #website_description_style {
-    max-width: 1000px;
-    min-width: 100px;
-    margin: 0 auto;
-    text-align: left;
-    padding-left: 20px;
-    display: inline-block;
-  }
-
-  #bottles {
-    max-width: 1000px;
-    min-width: 100px;
-    margin: 0 auto;
-    text-align: center;
-    padding-left: 20px;
-  }
-
-  a {
-    padding: 2px;
-    margin-top: -10px;
-  }
-
-
-
-  h1 {
-    text-align: left;
-    opacity: 1;
-    text-shadow: 0 0 10px darkgrey;
-    font-size: 1.5em;
-    padding: 0 2px;
-  }
-
-</style>
-
+<!--LOGIN BUTTON -->
 {% if not current_user %}
   <a href = "{{login_url}}">
     <button> Login </button>
@@ -50,19 +16,19 @@
   </a>
 {% endif %}
 
-<div id='header'>
-    <div id='title_style'>
-      <div id='innerbox'>
-      <h1>💧 Filler Finder </h1>
-    </div>
-  </div>
-
-  <div id='website_description_style'>
-    <h3> Find the nearest water bottle filling station and save the planet, one plastic bottle at a time! </h3>
+<!-- TITLE -->
+<div id='titleStyle'>
+    <div id='innerbox'>
+    <h1>💧 Filler Finder </h1>
   </div>
 </div>
+<div id='website_description_style'>
+  <h3> Find the nearest water bottle filling station and save the planet,
+    one plastic bottle at a time! </h3>
+</div>
 
-<div id='bottles'>
+<!-- SEARCH BAR -->
+<div id='divOverSearch'>
   <div id='searchBar'>
     <input id='address' type='text' placeholder='Search'>
     <button id='enterAddress'> Find! </button><br><br>
@@ -70,17 +36,17 @@
   </div>
 </div>
 
-<!-- Prints out the map and the list of locations in the html so that it can be converted a marker with the following javascript -->
+<!-- Prints map & list of locations in html to be converted to marker w/ JS -->
 <div id='map'>
   <script src = '/scripts/map.js'></script>
 
     <!-- Places marker based on the database -->
     <script>
-    function markerPlacement() {
-      {% for filler in filler_list %}
-        placeMarker(geocoder, map, '{{filler.location}}')
-      {% endfor %}
-    }
+      function markerPlacement() {
+        {% for filler in filler_list %}
+          placeMarker(geocoder, map, '{{filler.location}}')
+        {% endfor %}
+      }
     </script>
 
     <script async defer
