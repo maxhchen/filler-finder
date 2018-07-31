@@ -4,29 +4,55 @@ body {
 
 #map {
   background-color: lightblue;
-  width: 80%;
+  max-width: 1000px; min-width: 400px;
   height: 600px;
   border: 1px solid grey;
   box-shadow: 0 0 30px grey;
   margin: 0 auto;
+  padding-left: 20px;
 }
 
 #searchBar {
-  text-align: center;
   margin-bottom: 20px;
+  align-items: left;
+  float: left;
+  width: 100%;
+  margin-top: 1.5em;
+  margin-left: 10px;
+  margin-right: 0
+
+}
+
+
+#address{
+  float: left;
+  width: 80%;
+  }
+
+#enterAddress{
+  font-size: 12px;
 }
 
 #searchBar input {
   height: 3em;
   border-radius: 10px;
+  margin-right: 0;
+  margin-top: 5px
+
 }
 
 #searchBar button {
   width: 50px;
   height: 3em;
-  border-radius: 5px
+  border-radius: 5px;
+  float: left;
+  margin-left: 10px;
+  margin-top: 5px;
 }
-
+#add_link_home{
+  text-align: left;
+  margin-top: 5px;
+}
 #header {
   text-align: center;
   padding-top: 2em;
