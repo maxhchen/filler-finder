@@ -103,7 +103,7 @@ h3 {
 }
 
 #test {
-  background: url("images/images.jpg") repeat;
+  background: url("/images/images.jpg") repeat;
   padding: 5px;
   max-width: 30%;
   margin: left;
