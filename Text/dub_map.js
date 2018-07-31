@@ -4,8 +4,6 @@ let geocoder;
 let map;
 //{lat: 37.403619, lng: -122.031625};
 
-https://maps.googleapis.com/maps/api/directions/json?&mode=transit&origin=frontera+el+hierro&destination=la+restinga+el+hierro&departure_time=1399995076&key=AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA
-
 function initMap() {
   geocoder = new google.maps.Geocoder();
   //Initial location
@@ -45,9 +43,6 @@ function initMap() {
   document.querySelector('#enterAddress').addEventListener('click', e=> {
     codeAddress(geocoder, map);
   });
-
-  //Run the placemarker function
-  markerPlacement()
 
   //On page load attempt to recenter map at user location
   if (navigator.geolocation) {
@@ -96,25 +91,4 @@ function codeAddress(geocoder, map) {
         alert('Something went wrong: ' + status);
       }
     });
-}
-
-//Runs when database is loaded, is called in the home.html
-function placeMarker(geocoder, map, address) {
-
-  geocoder.geocode( {'address': address}, function(results, status)
-  {
-    if (status == 'OK'){
-    //Place a marker
-    let marker = new google.maps.Marker
-    ({
-      map: map,
-      position: results[0].geometry.location
-    });
-
-    //Error
-    } else
-    {
-      alert('Boom: ' + status);
-    }
-  });
 }

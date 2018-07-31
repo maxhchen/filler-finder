@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<meta charset='utf-8' />
+<title>Filler Finder</title>
+<link rel='stylesheet' href='/stylesheets/style.css'>
+<link href="https://fonts.googleapis.com/css?family=Cabin|Merienda" rel="stylesheet">
+
+<style>
+
+  #title_style{
+    max-width: 1000px; min-width: 100px; margin: 0 auto;
+    text-align: left;  padding: 0}
+  h1{ padding-left: 20px; padding-top: -50px}
+  #website_description_style{
+    max-width: 1000px; min-width: 100px; margin: 0 auto; text-align: left; padding-left: 20px
+  }
+
+  #bottles{
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center
+  }
+
+  #add_link_home{
+    display: inline-block;
+    padding: 10px;
+  }
+
+  #searchBar{
+    display: inline-block;
+    max-width: 100%
+  }
+
+</style>
+
+
+<div id='header'>
+  <div id='title_style'>
+    <h1>💧Filler Finder </h1>
+  </div>
+  <div id='website_description_style'>
+    <h3> Locate the nearest water bottle filling station and save the planet, one plastic bottle at a time! </h3>
+  </div>
+</div>
+
+<div id='bottles'>
+  <div id='searchBar'>
+    <input id='address' type='text' placeholder='Search'>
+    <button id='enterAddress'> Find! </button>
+  </div>
+  <div id='add_link_home'>
+      <h3><a href="/add">Add Filler</a>! </h3>
+  </div>
+</div>
+
+<!-- Prints out the map and the list of locations in the html so that it can be converted a marker with the following javascript -->
+<div id='map'>
+<script src = '/scripts/map.js'>
+  <script type="text/javascript">
+    {% for filler in filler_list %}
+      geocoder.geocode( {'address': '{{filler.location}}'}, function(results, status)
+      {
+        if (status == 'OK'){
+        //Place a marker
+        let marker = new google.maps.Marker
+        ({
+          map: map,
+          position: results[0].geometry.location
+        });
+
+        console.log(map)
+        console.log(position)
+        marker.setMap(map);
+        //Error
+        } else
+        {
+          alert('Boom: ' + status);
+        }
+      });
+    {% endfor %}
+  </script>
+</script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA&callback=initMap">
+  </script>
+</div>
