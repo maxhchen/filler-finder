@@ -10,26 +10,27 @@
 <div id='bottomPage'>
 <!-- Prints map & list of locations in html to be converted to marker w/ JS -->
 <div id='map'>
-  <script src = '/scripts/map.js'> </script>
-      <!-- Places marker based on the database -->
-      <script>
-      // Places marker for each filler in datastore
-        function markerPlacement() {
-          let marker;
-          {% for filler in filler_list %}
+<script src = '/scripts/map.js'> </script>
+    <!-- Places marker based on the database -->
+    <script>
+    // Places marker for each filler in datastore
+      function markerPlacement() {
+        let marker;
+        {% for filler in filler_list %}
 
-            // Uses jinja2 to use relevant values from each filler while in html
-            marker_key = "/description?key={{ filler.key.urlsafe() }}";
-            placeMarker(geocoder, map, '{{filler.location}}', marker_key);
+          // Uses jinja2 to use relevant values from each filler while in html
+          marker_key = "/description?key={{ filler.key.urlsafe() }}";
+          placeMarker(geocoder, map, '{{filler.location}}', marker_key);
 
-          {% endfor %}
-        }
-      </script>
+        {% endfor %}
+      }
+    </script>
 
-      <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA&callback=initMap">
-      </script>
-  </div>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA&callback=initMap">
+    </script>
+</div>
+
 </div>
 <style>
 
@@ -71,6 +72,7 @@
 
   </div>
 
+
   <div id='slogan'>
     <h3> Find the nearest water bottle filling station and save the planet,
       one plastic bottle at a time! </h3>
@@ -97,4 +99,4 @@
     {% endif %}
   </div>
 </div>
-<!-- -->
+<!-- Prints map & list of locations in html to be converted to marker w/ JS -->
