@@ -107,7 +107,11 @@ class AddFiller(webapp2.RequestHandler):
         company = self.request.get('company')
 
         #Get the email of the current user so their email can be added to the "Added By:" section of the description page
-        current_user_email = users.get_current_user().email()
+        current_user = users.get_current_user()
+        if current_user:
+            current_user_email = users.get_current_user().email()
+        else:
+            current_user_email = "None"
 
         current_filler = Filler.query().filter(Filler.location == location).get()
 
