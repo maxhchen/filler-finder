@@ -52,9 +52,21 @@
     <script>
       function markerPlacement() {
         {% for filler in filler_list %}
-          placeMarker(geocoder, map, '{{filler.location}}')
+
+          marker = placeMarker(geocoder, map, '{{filler.location}}');
+          console.log(marker);
+
         {% endfor %}
       }
+
+      function addClickable(marker) {
+        console.log("WORKS")
+        marker.addListener("click", function() {
+          window.location.replace("/description?key={{filler.key.urlsafe()}}");
+        });
+      }
+
+
     </script>
 
     <script async defer

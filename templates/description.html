@@ -17,6 +17,7 @@
     padding: 10px;
   }
 </style>
+
 <a id='homeButton' href='/' >
 <div id='topPage'>
   <div id='titleStyle'>
@@ -43,9 +44,6 @@
   <h3> Information for "{{ filler.name }}": </h3>
 </div>
 
-<<<<<<< HEAD
-=======
-
 <div id='minimap'>
   <script src = '/scripts/minimap.js'></script>
   <script async defer
@@ -53,17 +51,12 @@
   </script>
 </div>
 
->>>>>>> 9df13048c6ace824b701b09b5cf34bceae8c1466
 <div id='description'>
   <p><u>Location:</u>  {{ filler.location }} </p>
   <p><u>Type:</u> {{ filler.type }} </p>
   <p><u>Company:</u> {{ filler.company }}</p>
   <p><u>Description:</u> {{ filler.description }} </p>
 </div>
-
-
-<div id='minimap'>
-
 
   <script>
   let API_KEY = 'AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA';
@@ -106,4 +99,3 @@
   <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA&callback=initMap">
   </script>
-</div>
