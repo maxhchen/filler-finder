@@ -50,23 +50,17 @@
 <script src = '/scripts/map.js'> </script>
     <!-- Places marker based on the database -->
     <script>
+    // Places marker for each filler in datastore
       function markerPlacement() {
+        let marker;
         {% for filler in filler_list %}
 
-          marker = placeMarker(geocoder, map, '{{filler.location}}');
-          console.log(marker);
+          // Uses jinja2 to use relevant values from each filler while in html
+          marker_key = "/description?key={{ filler.key.urlsafe() }}";
+          placeMarker(geocoder, map, '{{filler.location}}', marker_key);
 
         {% endfor %}
       }
-
-      function addClickable(marker) {
-        console.log("WORKS")
-        marker.addListener("click", function() {
-          window.location.replace("/description?key={{filler.key.urlsafe()}}");
-        });
-      }
-
-
     </script>
 
     <script async defer

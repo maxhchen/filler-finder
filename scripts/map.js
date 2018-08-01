@@ -99,13 +99,17 @@ function codeAddress(geocoder, map) {
     });
 }
 
-function placeMarker(geocoder, map, address) {
+// Places correct marker based on filler datastore values
+function placeMarker(geocoder, map, address, marker_key) {
   geocoder.geocode( {'address' : address}, function(results, status) {
       marker = new google.maps.Marker ({
         map: map,
         icon: icon,
-        position: results[0].geometry.location
+        position: results[0].geometry.location,
       });
-      addClickable(marker);
+      marker.addListener("click", function() {
+        window.location.href=marker_key;
+      });
   });
+  //return marker;
 }
