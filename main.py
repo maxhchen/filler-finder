@@ -74,11 +74,11 @@ class HomePage(webapp2.RequestHandler):
 class Description(webapp2.RequestHandler):
     def get(self):
         # get and display correct filler from urlsafe_key
-        urlsafe_key = self.request.get("key")
-        key = ndb.Key(urlsafe = urlsafe_key)
-        filler = key.get()
+        #urlsafe_key = self.request.get("key")
+        #key = ndb.Key(urlsafe = urlsafe_key)
+        #filler = key.get()
 
-        
+        filler = Filler.query().get()
 
         templateVars = {
         "filler" : filler,

@@ -1,7 +1,8 @@
-//API key = AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA
 let API_KEY = 'AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA';
 let geocoder;
+let map;
 //{lat: 37.403619, lng: -122.031625};
+
 function initMap() {
   geocoder = new google.maps.Geocoder();
   //Initial location
@@ -25,12 +26,9 @@ function initMap() {
     },
   ]
 
-//let markers = '';
-  //console.log(typeof(markers));
-
   //Create markers using location_list
   location_list.forEach(function(feature) {
-    marker = new google.maps.Marker({
+    let marker = new google.maps.Marker({
       position: feature.position,
       icon: icon,
       map: map,
@@ -46,7 +44,7 @@ function initMap() {
     codeAddress(geocoder, map);
   });
 
-//markerPlacement()
+markerPlacement()
 
   //On page load attempt to recenter map at user location
   if (navigator.geolocation) {
@@ -96,7 +94,7 @@ function codeAddress(geocoder, map) {
       }
     });
 }
-/*
+
 function placeMarker(geocoder, map, address) {
   geocoder.geocode( {'address' : address}, function(results, status) {
     if (status == "OK") {
@@ -105,5 +103,5 @@ function placeMarker(geocoder, map, address) {
         position: results[0].geometry.location
       });
     }
-  })
-}*/
+  });
+}

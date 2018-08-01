@@ -5,29 +5,23 @@
 <link rel='stylesheet' href='/stylesheets/home.css'>
 <link href="https://fonts.googleapis.com/css?family=Cabin|Merienda" rel="stylesheet">
 
+<!--LOGIN BUTTON -->
+{% if not current_user %}
+  <a href = "{{login_url}}">
+    <button> Login </button>
+  </a>
+{% else %}
+  <a href = "{{logout_url}}">
+    <button> Logout </button>
+  </a>
+{% endif %}
 
-<div id='topPage'>
 <!-- TITLE -->
-  <div id='titleStyle'>
-      <div id='innerbox'>
-      <h1>💧 Filler Finder </h1>
-    </div>
-  </div>
-
-  <!--LOGIN BUTTON -->
-  <div id='log'>
-    {% if not current_user %}
-      <a href = "{{login_url}}">
-        <button> Login </button>
-      </a>
-    {% else %}
-      <a href = "{{logout_url}}">
-        <button> Logout </button>
-      </a>
-    {% endif %}
+<div id='titleStyle'>
+    <div id='innerbox'>
+    <h1>💧 Filler Finder </h1>
   </div>
 </div>
-
 <div id='slogan'>
   <h3> Find the nearest water bottle filling station and save the planet,
     one plastic bottle at a time! </h3>
@@ -44,17 +38,12 @@
 
 <!-- Prints map & list of locations in html to be converted to marker w/ JS -->
 <div id='map'>
-
-<script src=scripts/map.js> </script>
+<script src = '/scripts/map.js'> </script>
     <!-- Places marker based on the database -->
     <script>
-
-      
-
       function markerPlacement() {
         {% for filler in filler_list %}
           placeMarker(geocoder, map, '{{filler.location}}')
-          console.log("PLEASE WORK")
         {% endfor %}
       }
     </script>
@@ -62,5 +51,4 @@
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA&callback=initMap">
     </script>
-
 </div>
