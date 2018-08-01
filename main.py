@@ -87,8 +87,13 @@ class Description(webapp2.RequestHandler):
 
 class Index(webapp2.RequestHandler):
     def get(self):
+        filler_list = Filler.query().order(Filler.location).fetch()
+
+        templateVars = {
+        'filler_list' : filler_list,
+        }
         template = env.get_template("templates/fillerList.html")
-        self.response.write(template.render())
+        self.response.write(template.render(templateVars))
 
 class AddFiller(webapp2.RequestHandler):
     def get(self):
