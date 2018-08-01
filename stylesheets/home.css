@@ -31,7 +31,7 @@ h1 {
   position: absolute;
   right:0;
   top: 0;
-  margin: 2.5em 10px;
+  margin: 2em 10px;
 }
 
 #description {
@@ -45,7 +45,7 @@ h1 {
 }
 
 #divOverSearch {
-  width:50%;
+  width:60%;
   margin: 0 auto;
   text-align: center;
   display: inline-block;
@@ -60,9 +60,7 @@ h1 {
 
 #map {
   background-color: lightblue;
-  width: 90%;
-  max-width: 1000px;
-  min-width: 300px;
+  width: 100%;
   height: 600px;
   border: 1px solid grey;
   box-shadow: 0 0 30px grey;
@@ -74,7 +72,7 @@ h1 {
   margin-bottom: 20px;
   align-items: left;
   width: 100%;
-  margin-top: 1.5em;
+  margin-top: .5em;
   margin-left: 10px;
   margin-right: 0;
   display: inline-block;
@@ -83,17 +81,17 @@ h1 {
 #searchBar button {
   width: 50px;
   height: 3em;
-  border-radius: 5px;
+  border-radius: 7px;
   float: left;
-  margin-top: 7px;
+  margin-top: 15px;
   margin-left: 3px;
 }
 
 #searchBar input {
-  height: 3em;
+  height: 2em;
   width: 70%;
   border-radius: 10px;
-  margin-top: 5px;
+  margin-top: 2em;
 }
 
 #slogan {
@@ -105,14 +103,16 @@ h1 {
   margin-left: 2%;
 }
 
- #topPage{
+#topPage{
   width: 100%;
   position: absolute;
   top:0;
-  right: 0;
+  right:0;
+  background-color: lightblue;
+  box-shadow: 0 0 5px grey;
+  /* background : url('/images/images.jpg') */
 
-
-
+  #A9DDE8;
   /* animation: changeSize 4s linear;
 }
 
@@ -128,10 +128,7 @@ h1 {
 
 }
 
-#insideBottomPage{
-  padding: 40px 10px;
 
-}
 
 #bottomPage{
   background-color: #efeeff;

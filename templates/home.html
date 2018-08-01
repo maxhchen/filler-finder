@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <meta charset='utf-8' />
-<title>Filler Finder</title>
+<title>FillerFinder</title>
+<link rel="icon" href="/images/droplet.png">
 <link rel='stylesheet' href='/stylesheets/style.css'>
 <link rel='stylesheet' href='/stylesheets/home.css'>
 <link href="https://fonts.googleapis.com/css?family=Cabin|Merienda" rel="stylesheet">
 
 
 <div id='bottomPage'>
-<div id='insideBottomPage'>
-
-
 <!-- Prints map & list of locations in html to be converted to marker w/ JS -->
-  <div id='map'>
+<div id='map'>
   <script src = '/scripts/map.js'> </script>
       <!-- Places marker based on the database -->
       <script>
@@ -33,6 +31,32 @@
       </script>
   </div>
 </div>
+<style>
+
+  #menu {
+    position: fixed;
+    right: -15px;
+    top: 50%;
+    width: 8em;
+    margin-top: -2.5em;
+    background-color: lightblue;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding-right: 10px;
+    margin-right: -5px;
+    font-family: "Cabin", sans-serif;
+  }
+
+</style>
+
+<br>
+
+<div id='menu'>
+<ul>
+  <li> Home </li>
+  <li><a href="/add">Add Filler!</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
 </div>
 
 <div id='topPage'>
@@ -57,7 +81,6 @@
     <div id='searchBar'>
       <input id='address' type='text' placeholder='Search'>
       <button id='enterAddress'> Find! </button>
-      <h3> or <a id='addAFiller' href="/add">Add a Filler!</a> </h3>
     </div>
   </div>
 
@@ -74,3 +97,4 @@
     {% endif %}
   </div>
 </div>
+<!-- -->

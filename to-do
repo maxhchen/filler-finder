@@ -1,37 +1,31 @@
-To-Do:
-Home:
-✓     Link Filler Model to Marker and pass key
+UI:
+  Home/Add/About tab can hide and be pulled out
+  Drop-down for info on Index Page
 
-      Implement filtering for locations https://appendto.com/2016/09/advanced-google-maps-with-javascript-filtering-and-displaying-information/
+Stretch Features:
+  Implement filtering for locations https://appendto.com/2016/09/advanced-google-maps-with-javascript-filtering-and-displaying-information/
+  Get directions to filler
+  https://developers.google.com/maps/documentation/javascript/directions
 
-      Implement User and Comment models
+User/comments:
+  Implement User and Comment models
+  Display related comments on description page
+  Make it so that users need to sign in/have an account in order to add filler
+  Sign-in page (users have to sign in in order to add filler)
 
-      Make it so that users need to sign in/have an account in order to add filler
-
-      Sign-in page (users have to sign in in order to add filler)
-
-Description:
-      Display related comments on description page
-
-      Get directions to filler
-      https://developers.google.com/maps/documentation/javascript/directions
-
-      Fix minimap on description.html to recenter on the clicked marker
-
-✓     Pass templateVars to html, use js to get vars from html
-✓     put list of Fillers into templateVars and passs that into home.html
-✓     Use jinja to do a script loop to create all the markers, and be clickable
-
-✓     Problem is js <--> python, not python --> html
+Image Upload:
+  Upload images
 
 DONE:
 ✓     Click on location to redirect
-
 ✓     Put border on droplet icon
-
 ✓     Add way to find user's current location
       https://developers.google.com/maps/documentation/javascript/geolocation
-
 ✓     Add a way for users to input custom filler location
-
 ✓     Put minimap on description page
+✓     Fix minimap on description.html to recenter on the clicked marker
+✓     Pass templateVars to html, use js to get vars from html
+✓     put list of Fillers into templateVars and passs that into home.html
+✓     Use jinja to do a script loop to create all the markers, and be clickable
+✓     Problem is js <--> python, not python --> html
+✓     Link Filler Model to Marker and pass key

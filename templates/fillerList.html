@@ -1,9 +1,30 @@
 <!DOCTYPE html>
 <meta charset='utf-8' />
+<link rel="icon" href="/images/droplet.png">
 <link rel='stylesheet' href='/stylesheets/style.css'>
 <link rel='stylesheet' href='/stylesheets/home.css'>
 <link href="https://fonts.googleapis.com/css?family=Cabin|Merienda" rel="stylesheet">
-<title>Filler Index</title>
+<title>FillerList</title>
+
+<style>
+#box {
+display: flex;
+flex-direction: row;
+}
+
+.filler {
+  background: lightgray;
+  padding: 10px;
+  margin-right: 50px;
+  flex-grow: 1;
+}
+.link {
+  background: darkgray;
+  padding: 10px;
+}
+}
+
+</style>
 
 <div id='titleStyle'>
   <div id='innerbox'>
@@ -14,9 +35,20 @@
 <h3> Filler Index: </h3>
 <h5> a list of all the fillers in our database: </h5>
 
-{% for fill in filler %}
+{% for filler in filler_list %}
 <ul>
-  <li> This: {{ fill.location }}</li>
+  <div id="box">
+    <div class="link">
+      <a href="/description?key={{ filler.key.urlsafe() }}">
+        <img src="/images/Water_Droplet_Pin.png">
+      </a>
+    </div>
+    <div class="filler">
+      {{ filler.location }}
+      <br>
+      {{ filler.type }}
+    </div>
+  </div>
 </ul>
 
 {% endfor %}
