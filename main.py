@@ -34,6 +34,8 @@ class Filler(ndb.Model):
     picture = ndb.BlobProperty()
     description = ndb.StringProperty()
     company = ndb.StringProperty()
+    #The creator's email address
+    current_user_email = ndb.StringProperty()
 
 ######################################################################
 
@@ -97,6 +99,7 @@ class Index(webapp2.RequestHandler):
 
 class AddFiller(webapp2.RequestHandler):
     def get(self):
+
         template = env.get_template("templates/addFiller.html")
         self.response.write(template.render())
 
@@ -109,10 +112,13 @@ class AddFiller(webapp2.RequestHandler):
         description = self.request.get('description')
         company = self.request.get('company')
 
+        #Get the email of the current user so their email can be added to the "Added By:" section of the description page
+        current_user_email = users.get_current_user().email()
+
         current_filler = Filler.query().filter(Filler.location == location).get()
 
         if not current_filler:
-            current_filler = Filler(name = name, location = location, type = type, description = description, company = company)
+            current_filler = Filler(name = name, location = location, type = type, description = description, company = company, current_user_email = current_user_email)
             current_filler.put()
 
         templateVars = {
