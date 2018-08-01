@@ -19,12 +19,13 @@ h1 {
 #log button{
   display: inline-block;
   float: right;
-  margin-top: -100px;
+  margin-top: -75px;
   width: 50px;
   height: 3em;
   border-radius: 5px;
   font-size: 12px;
   margin-right: 100px;
+  padding: 0 4px;
 }
 
 #description {
@@ -94,7 +95,8 @@ h1 {
 }
 
 #topPage{
+  background: url("/images/images.jpg") repeat;
   max-width: 1000px;
   margin: 0 auto;
-  margin-top: -30px;
+  border-radius: 20px;
 }

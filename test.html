@@ -4,6 +4,19 @@
 
 <style>
 
+  #Page{
+    opacity: 1;
+    animation: fadein 2s linear;
+    }
+
+
+    @keyframes fadein {
+    from { opacity: 0 }
+    to { opacity: 1 }
+
+
+    }
+
   #test {
     background: url("images/download.jpg") repeat;
     border: 2px solid black;
@@ -54,15 +67,23 @@
   </div>
 </div>
 
-<div id='info'>
-  <div id='image'>
+<div id='Page'>
+  <div id='test'>
+    <div id='innerbox'>
+      <h1> Filler Finder </h1>
+    </div>
   </div>
 
-  <div id='description'>
-    <p><u>Location:</u> google tech corners</p>
-    <p><u>Type:</u> water fountain</p>
-    <p><u>Company:</u> google</p>
-    <p><u>Description:</u> in courtyard, works well</p>
+  <div id='info'>
+    <div id='image'>
+    </div>
+
+    <div id='description'>
+      <p><u>Location:</u> google tech corners</p>
+      <p><u>Type:</u> water fountain</p>
+      <p><u>Company:</u> google</p>
+      <p><u>Description:</u> in courtyard, works well</p>
+    </div>
   </div>
 </div>
 
