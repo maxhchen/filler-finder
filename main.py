@@ -119,10 +119,16 @@ class AddFiller(webapp2.RequestHandler):
         self.redirect("/")
         #### self.response.write(self.request.POST)
 
+class About(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template("templates/about.html")
+        self.response.write(template.render())
+
 
 app = webapp2.WSGIApplication([
     ('/', HomePage),
     ('/description', Description),
     ('/index', Index),
     ('/add', AddFiller),
+    ('/about', About),
 ], debug = True)
