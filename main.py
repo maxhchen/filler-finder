@@ -54,18 +54,12 @@ class HomePage(webapp2.RequestHandler):
             logging.info("This is the main handler")
             logout_url = users.create_logout_url('/')
 
-
-        filler = Filler.query().get()
-        if not filler:
-            filler = Filler(name="test_name_1", type="test_type", location="test_location", description="test filler #1").put()
-
         filler_list = Filler.query().fetch()
 
         templateVars = {
         "current_user" : current_user,
         "login_url" : login_url,
         "logout_url" : logout_url,
-        "filler" : filler,
         "filler_list" : filler_list,
         }
         template = env.get_template("templates/home.html")
