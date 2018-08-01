@@ -17,32 +17,6 @@ function initMap() {
       url: '/description',
     });
 
-
-
-/*
-  //Generate list of marker coordinates
-  let location_list = [
-    {
-      position: new google.maps.LatLng(37.403619, -122.031625),
-      type: 'info',
-    },
-  ]
-
-  //Create markers using location_list
-  location_list.forEach(function(feature) {
-    let marker = new google.maps.Marker({
-      position: feature.position,
-      map: map,
-      icon: icon,
-    });
-    marker.addListener("click", function() {
-      window.location.replace("/description?key={{filler.key.urlsafe()}}");
-    });
-    //markers.append(marker);
-  })*/
-
-
-
   //Give the button an event listener so that when clicked it will run codeAddress()
   document.querySelector('#enterAddress').addEventListener('click', e=> {
     codeAddress(geocoder, map);
@@ -111,5 +85,4 @@ function placeMarker(geocoder, map, address, marker_key) {
         window.location.href=marker_key;
       });
   });
-  //return marker;
 }

@@ -16,7 +16,7 @@ Description:
       Get directions to filler
       https://developers.google.com/maps/documentation/javascript/directions
 
-      Fix minimap on description.html to recenter on the clicked marker
+✓     Fix minimap on description.html to recenter on the clicked marker
 
 ✓     Pass templateVars to html, use js to get vars from html
 ✓     put list of Fillers into templateVars and passs that into home.html
