@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<meta charset='utf-8' />
+<link rel='stylesheet' href='/stylesheets/style.css'>
+<link rel='stylesheet' href='/stylesheets/home.css'>
+<link href="https://fonts.googleapis.com/css?family=Cabin|Merienda" rel="stylesheet">
+<title>Filler Index</title>
+
+<div id='titleStyle'>
+  <div id='innerbox'>
+    <h1>💧 Filler Finder </h1>
+  </div>
+</div>
+
+<h3> Filler Index: </h3>
+<h5> a list of all the fillers in our database: </h5>
+
+{% for fill in filler %}
+<ul>
+  <li> This: {{ fill.location }}</li>
+</ul>
+
+{% endfor %}
