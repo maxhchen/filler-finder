@@ -94,6 +94,7 @@ h1 {
 }
 
 #topPage{
+  background: url("/images/images.jpg") repeat;
   max-width: 1000px;
   margin: 0 auto;
   margin-top: -30px;

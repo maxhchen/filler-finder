@@ -4,6 +4,19 @@
 
 <style>
 
+  #Page{
+    opacity: 1;
+    animation: fadein 2s linear;
+    }
+
+
+    @keyframes fadein {
+    from { opacity: 0 }
+    to { opacity: 1 }
+
+
+    }
+
   #test {
     background: url("images/download.jpg") repeat;
     border: 2px solid black;
@@ -20,22 +33,46 @@
     text-align: center;
   }
 
+#POP{
+  background-color: blue;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  float: 100%;
+  float: bottom;
+  opacity: 0;
+  animation: fade 2s linear;
+}
+
+
+@keyframes fade {
+  100% { opacity: 0 }
+  0% { opacity: 1 }
+
+}
+
 </style>
 
-<div id='test'>
-  <div id='innerbox'>
-    <h1> Filler Finder </h1>
-  </div>
+<div id='POP'>
+  <h1> I will fade out out out! </h1>
 </div>
 
-<div id='info'>
-  <div id='image'>
+<div id='Page'>
+  <div id='test'>
+    <div id='innerbox'>
+      <h1> Filler Finder </h1>
+    </div>
   </div>
 
-  <div id='description'>
-    <p><u>Location:</u> google tech corners</p>
-    <p><u>Type:</u> water fountain</p>
-    <p><u>Company:</u> google</p>
-    <p><u>Description:</u> in courtyard, works well</p>
+  <div id='info'>
+    <div id='image'>
+    </div>
+
+    <div id='description'>
+      <p><u>Location:</u> google tech corners</p>
+      <p><u>Type:</u> water fountain</p>
+      <p><u>Company:</u> google</p>
+      <p><u>Description:</u> in courtyard, works well</p>
+    </div>
   </div>
 </div>

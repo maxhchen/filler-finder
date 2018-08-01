@@ -30,8 +30,16 @@ h3 {
 
 #titleStyle {
   min-width: 100px;
-  background: url("/images/images.jpg") repeat;
   padding: 2px 2px;
-  max-width: 230px;
+  max-width: 80%;
   border-radius: 10px;
+  opacity: 1;
+  animation: fadein 2s linear;
+  }
+
+
+  @keyframes fadein {
+  from { opacity: 0 }
+  to { opacity: 1 }
+
 }
