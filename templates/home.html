@@ -7,6 +7,47 @@
 <link href="https://fonts.googleapis.com/css?family=Cabin|Merienda" rel="stylesheet">
 
 
+<div id='topPage'>
+  <!-- TITLE -->
+  <div id='titleStyle'>
+    <a id='homeButton' href='/' >
+    <div id='innerbox'>
+      <h1>💧 Filler Finder </h1>
+    </div>
+  </a>
+  </div>
+  <div id='slogan'>
+    <h3> Find the nearest water bottle filling station and save the planet,
+      one plastic bottle at a time! </h3>
+  </div>
+  <!-- SEARCH BAR -->
+  <div id='divOverSearch'>
+    <div id='searchBar'>
+      <input id='address' type='text' placeholder='Search'>
+      <button id='enterAddress'> Find! </button>
+    </div>
+  </div>
+  <!--LOGIN BUTTON -->
+  <div id='log'>
+    {% if not current_user %}
+      <a href = "{{login_url}}">
+        <button> Login </button>
+      </a>
+    {% else %}
+      <a href = "{{logout_url}}">
+        <button> Logout </button>
+      </a>
+    {% endif %}
+  </div>
+</div>
+<div id='slogan'>
+  <h3 align="center"> Find the nearest water bottle filling station and save the planet,
+    one plastic bottle at a time! </h3>
+</div>
+
+<!-- Prints map & list of locations in html to be converted to marker w/ JS -->
+
+
 <div id='bottomPage'>
 <!-- Prints map & list of locations in html to be converted to marker w/ JS -->
 <div id='map'>
@@ -60,59 +101,3 @@
   <li><a href="/about">About</a></li>
 </ul>
 </div>
-
-<div id='topPage'>
-
-  <!-- TITLE -->
-  <div id='titleStyle'>
-    <a id='homeButton' href='/' >
-    <div id='innerbox'>
-      <h1>💧 Filler Finder </h1>
-    </div>
-  </a>
-
-  </div>
-
-
-  <div id='slogan'>
-    <h3> Find the nearest water bottle filling station and save the planet,
-      one plastic bottle at a time! </h3>
-  </div>
-
-  <!-- SEARCH BAR -->
-  <div id='divOverSearch'>
-    <div id='searchBar'>
-      <input id='address' type='text' placeholder='Search'>
-      <button id='enterAddress'> Find! </button>
-    </div>
-  </div>
-
-  <!--LOGIN BUTTON -->
-  <div id='log'>
-    {% if not current_user %}
-      <a href = "{{login_url}}">
-        <button> Login </button>
-      </a>
-    {% else %}
-      <a href = "{{logout_url}}">
-        <button> Logout </button>
-      </a>
-    {% endif %}
-  </div>
-</div>
-
-<div id='slogan'>
-  <h3 align="center"> Find the nearest water bottle filling station and save the planet,
-    one plastic bottle at a time! </h3>
-</div>
-
-<!-- SEARCH BAR -->
-<div id='divOverSearch'>
-  <div id='searchBar'>
-    <input id='address' type='text' placeholder='Search'>
-    <button id='enterAddress'> Find! </button><br><br>
-
-  </div>
-</div>
-
-<!-- Prints map & list of locations in html to be converted to marker w/ JS -->
