@@ -12,7 +12,7 @@ function initMap() {
 
   //The map
   map = new google.maps.Map(document.querySelector('#map'), {
-      zoom: 16,
+      zoom: 12,
       center: location,
       url: '/description',
     });
