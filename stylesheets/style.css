@@ -1,4 +1,8 @@
 /* this is organized!!! */
+a{ text-decoration: none;}
+a:active{
+  color: black;
+}
 
 body {
   background-color: #E5EEFF;
