@@ -1,7 +1,9 @@
 let API_KEY = 'AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA';
 let geocoder;
 let map;
-//{lat: 37.403619, lng: -122.031625};
+//Custom Marker image(s)
+let icon = "/images/Water_Droplet_Pin.png";
+//SF Location: {lat: 37.403619, lng: -122.031625};
 
 function initMap() {
   geocoder = new google.maps.Geocoder();
@@ -15,9 +17,9 @@ function initMap() {
       url: '/description',
     });
 
-  //Custom Marker image(s)
-  let icon = "/images/Water_Droplet_Pin.png";
 
+
+/*
   //Generate list of marker coordinates
   let location_list = [
     {
@@ -30,14 +32,16 @@ function initMap() {
   location_list.forEach(function(feature) {
     let marker = new google.maps.Marker({
       position: feature.position,
-      icon: icon,
       map: map,
+      icon: icon,
     });
     marker.addListener("click", function() {
       window.location.replace("/description?key={{filler.key.urlsafe()}}");
     });
     //markers.append(marker);
-  });
+  })*/
+
+
 
   //Give the button an event listener so that when clicked it will run codeAddress()
   document.querySelector('#enterAddress').addEventListener('click', e=> {
@@ -95,13 +99,17 @@ function codeAddress(geocoder, map) {
     });
 }
 
-function placeMarker(geocoder, map, address) {
+// Places correct marker based on filler datastore values
+function placeMarker(geocoder, map, address, marker_key) {
   geocoder.geocode( {'address' : address}, function(results, status) {
-    if (status == "OK") {
-      let marker = new google.maps.Marker ({
+      marker = new google.maps.Marker ({
         map: map,
-        position: results[0].geometry.location
+        icon: icon,
+        position: results[0].geometry.location,
       });
-    }
+      marker.addListener("click", function() {
+        window.location.href=marker_key;
+      });
   });
+  //return marker;
 }
