@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <meta charset='utf-8' />
 <link rel='stylesheet' href='/stylesheets/style.css'/>
+<link rel='stylesheet' href='/stylesheets/home.css'/>
 <link href="https://fonts.googleapis.com/css?family=Cabin|Merienda" rel="stylesheet">
 <title> {{ filler.name}} </title>
 
@@ -16,12 +17,43 @@
     padding: 10px;
   }
 </style>
+<a id='homeButton' href='/' >
+<div id='topPage'>
+  <div id='titleStyle'>
+      <div id='innerbox'>
+      <h1>💧 Filler Finder </h1>
+    </div>
+  </div>
+<a href='/' >
 
-<div id='header'>
-  <h1> Filler Finder </h1>
+  <div id='log'>
+    {% if not current_user %}
+      <a href = "{{login_url}}">
+        <button> Login </button>
+      </a>
+    {% else %}
+      <a href = "{{logout_url}}">
+        <button> Logout </button>
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+<div id='slogan'>
   <h3> Information for "{{ filler.name }}": </h3>
 </div>
 
+<<<<<<< HEAD
+=======
+
+<div id='minimap'>
+  <script src = '/scripts/minimap.js'></script>
+  <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA&callback=initMap">
+  </script>
+</div>
+
+>>>>>>> 9df13048c6ace824b701b09b5cf34bceae8c1466
 <div id='description'>
   <p><u>Location:</u>  {{ filler.location }} </p>
   <p><u>Type:</u> {{ filler.type }} </p>

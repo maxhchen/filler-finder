@@ -1,4 +1,8 @@
 /* this is organized!!! */
+a{ text-decoration: none;}
+a#homeButton:visited{
+  color:black;
+}
 
 body {
   background-color: #E5EEFF;
@@ -21,16 +25,6 @@ h3 {
   box-shadow: 0 0 40px rgb(255, 255, 255);
   text-align: center;
 
-}
-
-#test {
-  background: url("/images/images.jpg") repeat;
-  padding: 5px;
-  max-width: 30%;
-  margin-top: 10px;
-  margin-left: 10px;
-  box-shadow: 0 0 30px #3880f4;
-  display: inline-block;
 }
 
 #titleStyle {

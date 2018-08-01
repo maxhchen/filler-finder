@@ -9,7 +9,7 @@ function initMap() {
   let location = {lat: 37.7749, lng: -122.4194};
 
   //The map
-  let map = new google.maps.Map(document.querySelector('#map'), {
+  map = new google.maps.Map(document.querySelector('#map'), {
       zoom: 16,
       center: location,
       url: '/description',

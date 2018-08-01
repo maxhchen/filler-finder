@@ -5,23 +5,32 @@
 <link rel='stylesheet' href='/stylesheets/home.css'>
 <link href="https://fonts.googleapis.com/css?family=Cabin|Merienda" rel="stylesheet">
 
-<!--LOGIN BUTTON -->
-{% if not current_user %}
-  <a href = "{{login_url}}">
-    <button> Login </button>
-  </a>
-{% else %}
-  <a href = "{{logout_url}}">
-    <button> Logout </button>
-  </a>
-{% endif %}
+<a id='homeButton' href='/' >
+  <div id='topPage'>
 
-<!-- TITLE -->
-<div id='titleStyle'>
+  <!-- TITLE -->
+  <div id='titleStyle'>
     <div id='innerbox'>
-    <h1>💧 Filler Finder </h1>
+      <h1>💧 Filler Finder </h1>
+    </div>
+  </div>
+
+  <!--LOGIN BUTTON -->
+  <div id='log'>
+    {% if not current_user %}
+      <a href = "{{login_url}}">
+        <button> Login </button>
+      </a>
+    {% else %}
+      <a href = "{{logout_url}}">
+        <button> Logout </button>
+      </a>
+    {% endif %}
   </div>
 </div>
+</a>
+
+
 <div id='slogan'>
   <h3> Find the nearest water bottle filling station and save the planet,
     one plastic bottle at a time! </h3>
@@ -32,7 +41,7 @@
   <div id='searchBar'>
     <input id='address' type='text' placeholder='Search'>
     <button id='enterAddress'> Find! </button><br><br>
-    <h3> or <a href="/add">Add a Filler</a>! </h3>
+    <h3> or <a  id='addAFiller' href="/add">Add a Filler</a>! </h3>
   </div>
 </div>
 

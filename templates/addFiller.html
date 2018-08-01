@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <link rel='stylesheet' href='stylesheets/style.css'/>
+<link rel='stylesheet' href='stylesheets/home.css'/>
+
 <link href="https://fonts.googleapis.com/css?family=Cabin|Merienda" rel="stylesheet">
 <title>Add a Filler!</title>
 
@@ -20,10 +22,34 @@
         }
   input{display: inline-block;}
 
+
 </style>
 
+<a id='homeButton' href='/' >
+<div id='topPage'>
+<!-- TITLE -->
+  <div id='titleStyle'>
+      <div id='innerbox'>
+      <h1>💧 Filler Finder </h1>
+    </div>
+  </div>
+
+  <!--LOGIN BUTTON -->
+  <div id='log'>
+    {% if not current_user %}
+      <a href = "{{login_url}}">
+        <button> Login </button>
+      </a>
+    {% else %}
+      <a href = "{{logout_url}}">
+        <button> Logout </button>
+      </a>
+    {% endif %}
+  </div>
+</div>
+</a>
+
 <div id='header'>
-  <h1> Filler Finder </h1>
   <h3> Add a Filler! </h3>
 </div>
 
