@@ -66,6 +66,7 @@ h1 {
   box-shadow: 0 0 30px grey;
   margin: 0 auto;
   padding-left: 20px;
+  max-width: 1000px;
 }
 
 #searchBar {
