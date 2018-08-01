@@ -56,18 +56,12 @@ class HomePage(webapp2.RequestHandler):
             logging.info("This is the main handler")
             logout_url = users.create_logout_url('/')
 
-
-        filler = Filler.query().get()
-        if not filler:
-            filler = Filler(name="test_name_1", type="test_type", location="test_location", description="test filler #1").put()
-
         filler_list = Filler.query().fetch()
 
         templateVars = {
         "current_user" : current_user,
         "login_url" : login_url,
         "logout_url" : logout_url,
-        "filler" : filler,
         "filler_list" : filler_list,
         }
         template = env.get_template("templates/home.html")
@@ -130,10 +124,16 @@ class AddFiller(webapp2.RequestHandler):
         self.redirect("/")
         #### self.response.write(self.request.POST)
 
+class About(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template("templates/about.html")
+        self.response.write(template.render())
+
 
 app = webapp2.WSGIApplication([
     ('/', HomePage),
     ('/description', Description),
     ('/index', Index),
     ('/add', AddFiller),
+    ('/about', About),
 ], debug = True)
