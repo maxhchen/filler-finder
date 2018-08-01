@@ -92,11 +92,38 @@ h1 {
   max-width: 1000px;
   min-width: 100px;
   margin: 0 auto;
+  padding: 1em 0 0 10px;
 }
 
 #topPage{
   background: url("/images/images.jpg") repeat;
-  max-width: 1000px;
-  margin: 0 auto;
+  width: 80%;
   border-radius: 20px;
+  position: absolute;
+  top:0;
+  margin-left: 10%;
+  margin-right:10%;
+  opacity: 1;
+  animation: fadein 3s linear;
+  }
+
+
+  @keyframes fadein {
+  from { opacity: 0 }
+  to { opacity: 1 }
+
+}
+
+#insideBottomPage{
+  padding: 40px 10px;
+
+}
+
+#bottomPage{
+  background-color: #B0EAFF;
+  width: 90%;
+  min-width: 500px;
+  margin: 0 auto;
+  border-radius: 50px;
+  margin-top: 100px;
 }

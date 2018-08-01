@@ -35,13 +35,5 @@ h3 {
   padding: 0 2px;
   max-width: 80%;
   border-radius: 10px;
-  opacity: 1;
-  animation: fadein 2s linear;
-  }
-
-
-  @keyframes fadein {
-  from { opacity: 0 }
-  to { opacity: 1 }
-
+  
 }
