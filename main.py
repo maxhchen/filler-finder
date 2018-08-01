@@ -43,17 +43,11 @@ class HomePage(webapp2.RequestHandler):
     def get(self):
         login_url = "/"
         logout_url = "/"
-
         current_user = users.get_current_user()
-        if current_user:
-            logging.info(current_user.user_id())
-
 
         if not current_user:
-            print("no one logged in")
             login_url = users.create_login_url('/')
         else:
-            logging.info("This is the main handler")
             logout_url = users.create_logout_url('/')
 
         filler_list = Filler.query().fetch()
@@ -69,12 +63,23 @@ class HomePage(webapp2.RequestHandler):
 
 class Description(webapp2.RequestHandler):
     def get(self):
-        #get and display correct filler from urlsafe_key
+        login_url = "/"
+        logout_url = "/"
+        current_user = users.get_current_user()
+
+        if not current_user:
+            login_url = users.create_login_url('/')
+        else:
+            logout_url = users.create_logout_url('/')
+
         urlsafe_key = self.request.get("key")
         key = ndb.Key(urlsafe = urlsafe_key)
         filler = key.get()
 
         templateVars = {
+        "current_user" : current_user,
+        "login_url" : login_url,
+        "logout_url" : logout_url,
         "filler" : filler,
         }
 
@@ -83,9 +88,21 @@ class Description(webapp2.RequestHandler):
 
 class Index(webapp2.RequestHandler):
     def get(self):
+        login_url = "/"
+        logout_url = "/"
+        current_user = users.get_current_user()
+
+        if not current_user:
+            login_url = users.create_login_url('/')
+        else:
+            logout_url = users.create_logout_url('/')
+
         filler_list = Filler.query().order(Filler.location).fetch()
 
         templateVars = {
+        "current_user" : current_user,
+        "login_url" : login_url,
+        "logout_url" : logout_url,
         'filler_list' : filler_list,
         }
         template = env.get_template("templates/fillerList.html")
@@ -93,11 +110,19 @@ class Index(webapp2.RequestHandler):
 
 class AddFiller(webapp2.RequestHandler):
     def get(self):
-
+        login_url = "/"
+        logout_url = "/"
         current_user = users.get_current_user()
+
+        if not current_user:
+            login_url = users.create_login_url('/')
+        else:
+            logout_url = users.create_logout_url('/')
 
         templateVars = {
             'current_user' : current_user,
+            "login_url" : login_url,
+            "logout_url" : logout_url,
         }
 
         template = env.get_template("templates/addFiller.html")
@@ -125,10 +150,7 @@ class AddFiller(webapp2.RequestHandler):
             current_filler = Filler(name = name, location = location, type = type, description = description, company = company, current_user_email = current_user_email)
             current_filler.put()
 
-        templateVars = {
-
-        }
-        self.response.write(template.render(templateVars))
+        self.response.write(template.render())
 
         time.sleep(3)
         self.redirect("/")
@@ -136,8 +158,25 @@ class AddFiller(webapp2.RequestHandler):
 
 class About(webapp2.RequestHandler):
     def get(self):
+        login_url = "/"
+        logout_url = "/"
+
+        current_user = users.get_current_user()
+        if current_user:
+            logging.info(current_user.user_id())
+
+        if not current_user:
+            login_url = users.create_login_url('/')
+        else:
+            logout_url = users.create_logout_url('/')
+
+        templateVars = {
+        "current_user" : current_user,
+        "login_url" : login_url,
+        "logout_url" : logout_url,
+        }
         template = env.get_template("templates/about.html")
-        self.response.write(template.render())
+        self.response.write(template.render(templateVars))
 
 
 app = webapp2.WSGIApplication([
