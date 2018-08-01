@@ -6,11 +6,9 @@ function initMap() {
   let location = {lat: 37.7749, lng: -122.4194};
   //The map
   let map = new google.maps.Map(document.querySelector('#minimap'), {
-      zoom: 18,
+      zoom: 14,
       center: location,
     });
-
-  let marker_location = "{{ filler.location }}";
 
   geocoder.geocode( { 'address': marker_location }, function(results, status) {
         map.setCenter(results[0].geometry.location);
@@ -18,7 +16,7 @@ function initMap() {
   //Custom Marker image(s)
   let icon = "/images/Water_Droplet_Pin.png";
   //Create markers using location_list
-    placeMarker(geocoder, map, "{{ filler.location }}", icon);
+    placeMarker(geocoder, map, marker_location, icon);
 }
 function codeAddress(geocoder, map) {
   geocoder.geocode( { 'address': filler.location}, function(results, status) {
