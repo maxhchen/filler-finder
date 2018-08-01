@@ -85,9 +85,9 @@ class Description(webapp2.RequestHandler):
         template = env.get_template("templates/description.html")
         self.response.write(template.render(templateVars))
 
-class Search(webapp2.RequestHandler):
+class Index(webapp2.RequestHandler):
     def get(self):
-        template = env.get_template("templates/search.html")
+        template = env.get_template("templates/fillerList.html")
         self.response.write(template.render())
 
 class AddFiller(webapp2.RequestHandler):
@@ -96,8 +96,7 @@ class AddFiller(webapp2.RequestHandler):
         self.response.write(template.render())
 
     def post(self):
-        template = env.get_template("templates/addFiller.html")
-
+        template = env.get_template("templates/fillerList.html")
         #Get the values from user entered info
         name = self.request.get('name')
         location = self.request.get('location')
@@ -124,6 +123,6 @@ class AddFiller(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', HomePage),
     ('/description', Description),
-    ('/search', Search),
+    ('/index', Index),
     ('/add', AddFiller),
 ], debug = True)
