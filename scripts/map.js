@@ -22,6 +22,13 @@ function initMap() {
     codeAddress(geocoder, map);
   });
 
+  //Enter button and does the same as above
+  document.querySelector('#address').addEventListener('keypress', e=>{
+    if (e.key == 'Enter'){
+      codeAddress(geocoder, map);
+    }
+  });
+
 markerPlacement()
 
   //On page load attempt to recenter map at user location
