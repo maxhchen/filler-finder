@@ -24,6 +24,7 @@ h3 {
   padding: 1px;
   box-shadow: 0 0 40px rgb(255, 255, 255);
   text-align: center;
+  border-radius: 10px;
 
 }
 
@@ -32,4 +33,5 @@ h3 {
   background: url("/images/images.jpg") repeat;
   padding: 2px 2px;
   max-width: 230px;
+  border-radius: 10px;
 }
