@@ -23,16 +23,6 @@ h3 {
 
 }
 
-#test {
-  background: url("/images/images.jpg") repeat;
-  padding: 5px;
-  max-width: 30%;
-  margin-top: 10px;
-  margin-left: 10px;
-  box-shadow: 0 0 30px #3880f4;
-  display: inline-block;
-}
-
 #titleStyle {
   min-width: 100px;
   background: url("/images/images.jpg") repeat;
