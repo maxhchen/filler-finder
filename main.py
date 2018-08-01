@@ -117,6 +117,8 @@ class AddFiller(webapp2.RequestHandler):
 
         }
         self.response.write(template.render(templateVars))
+
+        time.sleep(3)
         self.redirect("/")
         #### self.response.write(self.request.POST)
 

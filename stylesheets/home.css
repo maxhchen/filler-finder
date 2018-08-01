@@ -1,0 +1,86 @@
+a {
+  padding: 2px;
+  margin-top: -10px;
+}
+
+h1 {
+  text-align: left;
+  opacity: 1;
+  text-shadow: 0 0 10px darkgrey;
+  font-size: 1.5em;
+  padding: 0 2px;
+}
+
+#address {
+  float: left;
+  width: 90%;
+}
+
+#description {
+  background-color: lightgrey;
+  padding: 10px;
+  max-width: 50%;
+  margin: 0 auto;
+  font-family: "Cabin", sans-serif;
+  font-size: 15px;
+  background: rgba(174, 174, 174, .5);
+}
+
+#divOverSearch {
+  max-width: 1000px;
+  min-width: 100px;
+  margin: 0 auto;
+  text-align: center;
+  padding-left: 20px;
+}
+
+#enterAddress{
+  font-size: 12px;
+}
+
+#map {
+  background-color: lightblue;
+  max-width: 1000px;
+  min-width: 400px;
+  height: 600px;
+  border: 1px solid grey;
+  box-shadow: 0 0 30px grey;
+  margin: 0 auto;
+  padding-left: 20px;
+}
+
+#searchBar {
+  margin-bottom: 20px;
+  align-items: left;
+  float: left;
+  width: 100%;
+  margin-top: 1.5em;
+  margin-left: 10px;
+  margin-right: 0;
+  display: inline-block;
+}
+
+#searchBar button {
+  width: 50px;
+  height: 3em;
+  border-radius: 5px;
+  float: left;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+#searchBar input {
+  height: 3em;
+  border-radius: 10px;
+  margin-right: 0;
+  margin-top: 5px;
+}
+
+#slogan {
+  max-width: 1000px;
+  min-width: 100px;
+  margin: 0 auto;
+  text-align: left;
+  padding-left: 20px;
+  display: inline-block;
+}

@@ -1,77 +1,7 @@
+/* this is organized!!! */
+
 body {
-  background-color: #D1DEFF;
-}
-
-#map {
-  background-color: lightblue;
-  max-width: 1000px; min-width: 400px;
-  height: 600px;
-  border: 1px solid grey;
-  box-shadow: 0 0 30px grey;
-  margin: 0 auto;
-  padding-left: 20px;
-}
-
-#minimap {
-  background-color: lightblue;
-  width: 50%;
-  height: 300px;
-  border: 1px solid grey;
-  box-shadow: 0 0 30px grey;
-  margin: 0 auto;
-  margin-top: 30px;
-  padding: 10px;
-}
-
-#searchBar {
-  margin-bottom: 20px;
-  align-items: left;
-  float: left;
-  width: 100%;
-  margin-top: 1.5em;
-  margin-left: 10px;
-  margin-right: 0
-
-}
-
-
-#address{
-  float: left;
-  width: 80%;
-  }
-
-#enterAddress{
-  font-size: 12px;
-}
-
-#searchBar input {
-  height: 3em;
-  border-radius: 10px;
-  margin-right: 0;
-  margin-top: 5px
-
-}
-
-#searchBar button {
-  width: 50px;
-  height: 3em;
-  border-radius: 5px;
-  float: left;
-  margin-left: 10px;
-  margin-top: 5px;
-}
-#add_link_home{
-  text-align: left;
-  margin-top: 5px;
-}
-#header {
-  text-align: center;
-  padding-top: 2em;
-}
-
-h3 {
-  padding-bottom: .75em;
-  font-family: "Cabin", sans-serif;
+  background-color: #E5EEFF;
 }
 
 h1 {
@@ -79,12 +9,33 @@ h1 {
   text-shadow: 0 0 20px antiquewhite;
 }
 
-#description {
-  background-color: lightgrey;
-  padding: 10px;
-  max-width: 50%;
-  margin: 0 auto;
+h3 {
+  padding-bottom: .75em;
   font-family: "Cabin", sans-serif;
-  font-size: 15px;
-  background: rgba(174, 174, 174, .5);
+}
+
+#innerbox {
+  margin: 20px;
+  background-color: rgba(255, 255, 255, .6);
+  padding: 1px;
+  box-shadow: 0 0 40px rgb(255, 255, 255);
+  text-align: center;
+}
+
+#test {
+  background: url("/images/images.jpg") repeat;
+  padding: 5px;
+  max-width: 30%;
+  margin: left;
+  margin-top: 10px;
+  margin-left: 10px;
+  box-shadow: 0 0 30px #3880f4;
+  display: inline-block;
+}
+
+#titleStyle {
+  min-width: 100px;
+  background: url("/images/images.jpg") repeat;
+  padding: 2px 2px;
+  max-width: 230px;
 }

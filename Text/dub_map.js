@@ -1,14 +1,16 @@
 //API key = AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA
 let API_KEY = 'AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA';
 let geocoder;
+let map;
 //{lat: 37.403619, lng: -122.031625};
+
 function initMap() {
   geocoder = new google.maps.Geocoder();
   //Initial location
   let location = {lat: 37.7749, lng: -122.4194};
 
   //The map
-  let map = new google.maps.Map(document.querySelector('#map'), {
+  map = new google.maps.Map(document.querySelector('#map'), {
       zoom: 16,
       center: location,
       url: '/description',
@@ -25,12 +27,9 @@ function initMap() {
     },
   ]
 
-//let markers = '';
-  //console.log(typeof(markers));
-
   //Create markers using location_list
   location_list.forEach(function(feature) {
-    marker = new google.maps.Marker({
+    let marker = new google.maps.Marker({
       position: feature.position,
       icon: icon,
       map: map,
@@ -38,15 +37,12 @@ function initMap() {
     marker.addListener("click", function() {
       window.location.replace("/description?key={{filler.key.urlsafe()}}");
     });
-    //markers.append(marker);
   });
 
   //Give the button an event listener so that when clicked it will run codeAddress()
   document.querySelector('#enterAddress').addEventListener('click', e=> {
     codeAddress(geocoder, map);
   });
-
-//markerPlacement()
 
   //On page load attempt to recenter map at user location
   if (navigator.geolocation) {
@@ -96,14 +92,3 @@ function codeAddress(geocoder, map) {
       }
     });
 }
-/*
-function placeMarker(geocoder, map, address) {
-  geocoder.geocode( {'address' : address}, function(results, status) {
-    if (status == "OK") {
-      let marker = new google.maps.Marker ({
-        map: map,
-        position: results[0].geometry.location
-      });
-    }
-  })
-}*/
