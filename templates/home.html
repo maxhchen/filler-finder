@@ -53,6 +53,7 @@
         <button> Login </button>
       </a>
     {% else %}
+      {{current_user.email()}}
       <a href = "{{logout_url}}">
         <button> Logout </button>
       </a>
@@ -71,7 +72,12 @@
   <div id='searchBar'>
     <input id='address' type='text' placeholder='Search'>
     <button id='enterAddress'> Find! </button><br><br>
-    <h3> or <a  id='addAFiller' href="/add">Add a Filler</a>! </h3>
+    {% if current_user %}
+      <h3> or <a  id='addAFiller' href="/add">Add a Filler</a>! </h3>
+      {% else %}
+      <h3> Login in to add a filler!</h3>
+    {% endif %}
+
     <h3> or <a href="/index">See Filler List</a>! </h3>
   </div>
 </div>
