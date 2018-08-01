@@ -5,7 +5,7 @@ a#homeButton:visited{
 }
 
 body {
-  background-color: #E5EEFF;
+  background-color: #6b86cc;
 }
 
 h1 {
@@ -14,26 +14,25 @@ h1 {
 }
 
 h3 {
-  padding-bottom: .75em;
   font-family: "Cabin", sans-serif;
+  font-size: 12px;
 }
 
 #innerbox {
-  margin: 20px 10px 0 0;
-  margin-left: 20px;
-  background-color: rgba(255, 255, 255, .6);
+  position: absolute;
+  left:0;
+  top:0;
+  /* background-color: rgba(255, 255, 255, .6); */
   padding: 1px;
-  box-shadow: 0 0 40px rgb(255, 255, 255);
+  /* box-shadow: 0 0 40px rgb(255, 255, 255); */
   text-align: center;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   width: 200px
 
 }
 
-#titleStyle {
-  min-width: 100px;
-  padding: 0 2px;
-  max-width: 80%;
+/* #titleStyle {
+  width: 20%;
   border-radius: 10px;
-  
-}
+
+} */
