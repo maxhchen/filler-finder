@@ -91,21 +91,22 @@
   <h3 align="center"> Add a Filler! </h3>
 </div>
 
-<div id='form'>
-  <form action="/add" method="post">
-    <label>Location (approximate street address, city, state): </label> <input name='location' size=60%><br><br>
-    <label>Company (if known):</label> <input name='company'><br><br>
-    <label>Type:</label>
-    <select name="type">
-      <option value="Drinking Fountain">Drinking Fountain</option>
-      <option value="Bottle Filler">Bottle Filler</option>
-      <option value="Gallon Filler">Gallon Filler</option>
-    </select><br><br>
-    <label>Description of filler (the more info, the better!):</label> <input name='description'><br><br>
-    <input type="submit" value="Add Filler!"/>
-    <a href='/'> Or find one! <a>
-  </form>
-</div>
+{% if current_user %}
+  <div id='form'>
+    <form action="/add" method="post">
+      <label>Location (approximate street address, city, state): </label> <input name='location' size=60%><br><br>
+      <label>Company (if known):</label> <input name='company'><br><br>
+      <label>Type:</label>
+      <select name="type">
+        <option value="Drinking Fountain">Drinking Fountain</option>
+        <option value="Bottle Filler">Bottle Filler</option>
+        <option value="Gallon Filler">Gallon Filler</option>
+      </select><br><br>
+      <label>Description of filler (the more info, the better!):</label> <input name='description'><br><br>
+      <input type="submit" value="Add Filler!"/>
+      <a href='/'> Or find one! <a>
+    </form>
+  </div>
 
 <div id='hints'>
   <h4> Helpful hints: </h4>
@@ -121,3 +122,8 @@
       to fill gallon pitchers. If you can't decide between options, take your best guess.</li>
     <li> Please stick to fillers in public places. Pretty please. We aren't covering your legal fees if you
       get caught on private property. We don't even pay to run this website.</li>
+
+{% else %}
+  <div id='LoginPlease'>Login to add filler!</div>
+
+{% endif %}

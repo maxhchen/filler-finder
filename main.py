@@ -94,8 +94,14 @@ class Index(webapp2.RequestHandler):
 class AddFiller(webapp2.RequestHandler):
     def get(self):
 
+        current_user = users.get_current_user()
+
+        templateVars = {
+            'current_user' : current_user,
+        }
+
         template = env.get_template("templates/addFiller.html")
-        self.response.write(template.render())
+        self.response.write(template.render(templateVars))
 
     def post(self):
         template = env.get_template("templates/fillerList.html")
