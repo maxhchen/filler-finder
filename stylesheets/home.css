@@ -3,6 +3,7 @@ a {
   margin-top: -10px;
 }
 
+
 h1 {
   text-align: left;
   opacity: 1;
@@ -96,4 +97,5 @@ h1 {
 #topPage{
   max-width: 1000px;
   margin: 0 auto;
+  margin-top: -30px;
 }
