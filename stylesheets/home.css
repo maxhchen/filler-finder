@@ -100,11 +100,11 @@ h1 {
   position: absolute;
   top:0;
   right:0;
-  background-color: lightblue;
+  background-color: #b4e1f7;
   box-shadow: 0 0 5px grey;
   /* background : url('/images/images.jpg') */
 
-  #A9DDE8;
+  /* #A9DDE8; */
   /* animation: changeSize 4s linear;
 }
 
