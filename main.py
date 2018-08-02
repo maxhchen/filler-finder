@@ -115,7 +115,7 @@ class Index(webapp2.RequestHandler):
         else:
             logout_url = users.create_logout_url('/')
 
-        filler_list = Filler.query().order(Filler.location).fetch()
+        filler_list = Filler.query().order(Filler.name).fetch()
 
         templateVars = {
         "current_user" : current_user,
