@@ -1,6 +1,9 @@
 /* this is organized!!! */
-a{ text-decoration: none;}
-a#homeButton:visited{
+a {
+  text-decoration: none;
+}
+
+a#homeButton:visited {
   color:black;
 }
 
