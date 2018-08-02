@@ -20,21 +20,6 @@ h1 {
   width: 90%;
 }
 
-
-#log button{
-  display: inline-block;
-  width: 50px;
-  height: 3em;
-  border-radius: 5px;
-  font-size: 12px;
-  padding: 0 4px;
-  position: absolute;
-  right:0;
-  top: 0;
-  margin: 1.8em 10px;
-}
-
-
 #divOverSearch {
   width:60%;
   margin: 0 auto;
@@ -47,6 +32,19 @@ h1 {
 
 #enterAddress{
   font-size: 12px;
+}
+
+#log button{
+  display: inline-block;
+  width: 50px;
+  height: 3em;
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 0 4px;
+  position: absolute;
+  right:0;
+  top: 0;
+  margin: 1.8em 10px;
 }
 
 #map {

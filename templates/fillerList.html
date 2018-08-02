@@ -7,9 +7,15 @@
 <title>FillerList</title>
 
 <style>
-  #box {
-    display: flex;
-    flex-direction: row;
+
+  h2 {
+    font-family: "Cabin", sans-serif;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+
+  p {
+    font-family: "Cabin", sans-serif;
     margin: 0 auto;
     max-width: 1000px;
   }
@@ -26,14 +32,9 @@
     padding: 10px;
   }
 
-  h2 {
-    font-family: "Cabin", sans-serif;
-    margin: 0 auto;
-    max-width: 1000px;
-  }
-
-  p {
-    font-family: "Cabin", sans-serif;
+  #box {
+    display: flex;
+    flex-direction: row;
     margin: 0 auto;
     max-width: 1000px;
   }
@@ -67,12 +68,12 @@
 </div>
 
 <div id='menu'>
-<ul>
-  <li><a href="/">Home</a></li>
-  <li>Filler List</li>
-  <li><a href="/add">Add Filler!</a></li>
-  <li><a href="/about">About</a></li>
-</ul>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li>Filler List</li>
+    <li><a href="/add">Add Filler!</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
 </div>
 
 <br><br><br><br><br>
@@ -80,21 +81,22 @@
 <h2> Filler Index </h2> <br>
 <p> (a list of all the fillers in our database -- click on the marker icon to be redirected to that filler's page!) </p>
 <br>
+
 {% for filler in filler_list %}
-<ul>
-  <div id="box">
-    <div class="link">
-      <a href="/description?key={{ filler.key.urlsafe() }}">
-        <img src="/images/Water_Droplet_Pin.png">
-      </a>
+  <ul>
+    <div id="box">
+      <div class="link">
+        <a href="/description?key={{ filler.key.urlsafe() }}">
+          <img src="/images/Water_Droplet_Pin.png">
+        </a>
+      </div>
+      <div class="filler">
+        {{ filler.name }}
+        <br>
+        {{ filler.location }}
+        <br>
+        {{ filler.type }}
+      </div>
     </div>
-    <div class="filler">
-      {{ filler.name }}
-      <br>
-      -{{ filler.location }}
-      <br>
-      -{{ filler.type }}
-    </div>
-  </div>
-</ul>
+  </ul>
 {% endfor %}
