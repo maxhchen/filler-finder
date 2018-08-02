@@ -105,7 +105,7 @@
   {% if current_user %}
     <div id='form'>
       <form action="/add" method="post">
-        <label>Location (approximate street address, city, state): </label> <input name='location' size=60%><br><br>
+        <label>Location (approximate street address, city, state): </label> <input name='location' size=60% required><br><br>
         <label>Company (if known):</label> <input name='company'><br><br>
         <label>Type:</label>
         <select name="type">

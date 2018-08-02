@@ -19,6 +19,7 @@ env = jinja2.Environment(
 class User(ndb.Model):
     name = ndb.StringProperty()
     email = ndb.StringProperty()
+    limit = ndb.IntegerProperty()
 
 class Comment(ndb.Model):
     message = ndb.StringProperty()
@@ -141,18 +142,21 @@ class AddFiller(webapp2.RequestHandler):
         current_user = users.get_current_user()
         if current_user:
             current_user_email = users.get_current_user().email()
+
+            #Check whether or not there is an existing filler if not, add one
+            current_filler = Filler.query().filter(Filler.location == location).get()
+
+            if not current_filler:
+                current_filler = Filler(name = name, location = location, type = type, description = description, company = company, current_user_email = current_user_email)
+                current_filler.put()
+
         else:
             current_user_email = "None"
 
-        current_filler = Filler.query().filter(Filler.location == location).get()
-
-        if not current_filler:
-            current_filler = Filler(name = name, location = location, type = type, description = description, company = company, current_user_email = current_user_email)
-            current_filler.put()
 
         self.response.write(template.render())
 
-        time.sleep(3)
+        time.sleep(2)
         self.redirect("/")
         #### self.response.write(self.request.POST)
 
