@@ -30,8 +30,6 @@ class Filler(ndb.Model):
     name = ndb.StringProperty()
     type = ndb.StringProperty()
     location = ndb.StringProperty()
-    #lat = ndb.FloatProperty()
-    #long = ndb.FloatProperty()
     picture = ndb.BlobProperty()
     description = ndb.StringProperty()
     company = ndb.StringProperty()
@@ -40,7 +38,7 @@ class Filler(ndb.Model):
 
 class APIkey(ndb.Model):
     key = ndb.StringProperty()
-    
+
 ######################################################################
 
 class HomePage(webapp2.RequestHandler):
@@ -167,6 +165,8 @@ class AddFiller(webapp2.RequestHandler):
         type = self.request.get('type')
         description = self.request.get('description')
         company = self.request.get('company')
+        picture = self.request.get('picture')
+#        picture = images.resize(picture, 50, 50)
 
         #Get the email of the current user so their email can be added to the "Added By:" section of the description page
         current_user = users.get_current_user()
@@ -177,7 +177,7 @@ class AddFiller(webapp2.RequestHandler):
             current_filler = Filler.query().filter(Filler.location == location).get()
 
             if not current_filler:
-                current_filler = Filler(name = name, location = location, type = type, description = description, company = company)
+                current_filler = Filler(name = name, location = location, type = type, description = description, company = company, picture = picture)
                 current_filler.put()
                 current_person.limit += 1
                 current_person.put()
