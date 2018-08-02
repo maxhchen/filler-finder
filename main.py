@@ -45,16 +45,25 @@ class APIkey(ndb.Model):
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
+        #get api key from datastore
         apiKey = APIkey.query().get()
 
         login_url = "/"
         logout_url = "/"
+
+        #get the user
         current_user = users.get_current_user()
 
         if not current_user:
             login_url = users.create_login_url('/')
         else:
             logout_url = users.create_logout_url('/')
+            #see if a user has any user data with the same email
+            current_person = User.query().filter(User.email == current_user.email()).get()
+            #if they don't create a User object with their email assigned
+            if not current_person:
+                current_person = User(email = current_user.email(), limit = 0)
+                current_person.put()
 
         filler_list = Filler.query().fetch()
 
@@ -141,6 +150,16 @@ class AddFiller(webapp2.RequestHandler):
         self.response.write(template.render(templateVars))
 
     def post(self):
+        #get the user
+        current_user = users.get_current_user()
+
+        #get current_person(user object)
+        current_person = User.query().filter(User.email == current_user.email()).get()
+        #make one if they dont have one
+        if not current_person:
+            current_person = User(email = current_user.email(), limit = 0)
+            current_person.put()
+
         template = env.get_template("templates/fillerList.html")
         #Get the values from user entered info
         name = self.request.get('name')
@@ -151,15 +170,17 @@ class AddFiller(webapp2.RequestHandler):
 
         #Get the email of the current user so their email can be added to the "Added By:" section of the description page
         current_user = users.get_current_user()
-        if current_user:
-            current_user_email = users.get_current_user().email()
+        #Check if user exist and if they have an account and it they have exceeded their limits
+        if current_user and current_person and current_person.limit < 10:
 
             #Check whether or not there is an existing filler if not, add one
             current_filler = Filler.query().filter(Filler.location == location).get()
 
             if not current_filler:
-                current_filler = Filler(name = name, location = location, type = type, description = description, company = company, current_user_email = current_user_email)
+                current_filler = Filler(name = name, location = location, type = type, description = description, company = company)
                 current_filler.put()
+                current_person.limit += 1
+                current_person.put()
 
         else:
             current_user_email = "None"
