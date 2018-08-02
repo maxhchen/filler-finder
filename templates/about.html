@@ -8,6 +8,8 @@
 
 <style>
 
+
+
   h2 {
     font-family: "Cabin", sans-serif;
   }
@@ -53,6 +55,11 @@
     border-radius: 10px;
   }
 
+  #p {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   #tom {
     padding: 10px;
     margin: 20px;
@@ -69,7 +76,7 @@
 <div id='topPage'>
   <!-- TITLE -->
   <div id='titleStyle'>
-    <a id='homeButton' href='/' >
+    <a id='homeButton' href ='/' >
     <div id='innerbox'>
       <h1>💧 Filler Finder </h1>
     </div>
@@ -103,14 +110,6 @@
   </ul>
 </div>
 
-<div id='topPage'>
-  <div id='titleStyle'>
-      <div id='innerbox'>
-        <h1>💧 Filler Finder </h1>
-    </div>
-  </div>
-</div>
-
 <div id="about">
   <h2> About Filler Finder: </h2>
   <p> Inspired by an idea presented during Google's Computer Science Summer Institute (CSSI) 2018 program in Mountain View,
@@ -129,28 +128,54 @@
 
   <h2> About Us: </h2>
     <div id="max">
-      <h4><b>Maxwell Chen</b></h4>
-      <p><i>Backend Programming</i></p>
-      <p> Maxwell is an incoming freshman at UC Berkeley, planning to major in computer science and minor in electronic intelligent systems. Likes programming, neuroscience, and teaching.  </p>
+      <h4 id="p"><b>Maxwell Chen</b></h4>
+      <p id="p"><i>Backend Programming</i></p>
+      <p id="p"> Maxwell is an incoming freshman at UC Berkeley, planning to major in computer science and minor in electronic
+        intelligent systems. He likes programming, neuroscience, and teaching.  </p>
       <br>
     </div>
     <div id="leo">
-      <h4><b>Leonardo Espinoza</b></h4>
-      <p><i>Frontend Programming</i></p>
-      <p>bio coming soon</p>
+      <h4 id="p"><b>Leonardo Espinoza</b></h4>
+      <p id="p"><i>Frontend Programming</i></p>
+      <p id="p">bio coming soon</p>
       <br>
     </div>
     <div id="ash">
-      <h4><b>Ashlyn Mahoney</b></h4>
-      <p><i>Frontend Programming</i></p>
-      <p>A Bay Area native, Ashlyn is currently a freshman at UC San Diego, majoring in computer science and considering
+      <h4 id="p"><b>Ashlyn Mahoney</b></h4>
+      <p id="p"><i>Frontend Programming</i></p>
+      <p id="p">A Bay Area native, Ashlyn is currently a freshman at UC San Diego, majoring in computer science and considering
       a minor in either environmental studies or photography (or both!). </p>
       <br>
     </div>
     <div id="tom">
-      <h4><b>Tom Tan</b></h4>
-      <p><i>Backend Programming</i></p>
-      <p>I do stuff</p>
+      <h4 id="p"><b>Tom Tan</b></h4>
+      <p id="p"><i>Backend Programming</i></p>
+      <p id="p">I <span id='tombio'>do</span> stuff</p>
+      <p id="p"> Tom is an incoming freshman at UC Davis, planning to major in computer science and engineering. "Made in China". </p>
       <br>
     </div>
 </div>
+
+<script>
+//VERY IMPORTANT DON'T TOUCH
+  function changeStuff() {
+    bio = document.querySelector('#tombio');
+    if (bio.innerHTML == 'do'){
+      bio.innerHTML = 'code';
+    }else if (bio.innerHTML == 'code'){
+      bio.innerHTML = 'write';
+    }else if (bio.innerHTML == 'write')
+    {
+      bio.innerHTML = 'cry about';
+    }else{
+      bio.innerHTML = 'do';
+    }
+
+    setTimeout(changeStuff, 2000);
+  };
+
+  changeStuff();
+
+
+
+</script>
