@@ -2,14 +2,40 @@
 <link rel="icon" href="/images/droplet.png">
 <link rel='stylesheet' href='stylesheets/style.css'/>
 <link rel='stylesheet' href='stylesheets/home.css'/>
-
 <link href="https://fonts.googleapis.com/css?family=Cabin|Merienda" rel="stylesheet">
 <title>AddFiller</title>
 
 <style>
 
-  h3{
-    margin-top: -1px;
+  /* h3{
+    margin-top: -6px;
+  } */
+
+  h4 {
+    font-family: "Cabin", sans-serif;
+  }
+
+  input {
+    display: inline-block;
+  }
+
+  label {
+    width: 35%;
+    display: inline-block;
+    text-align: right;
+    max-width: 200px;
+    margin-right: 5px;
+    margin-bottom: 8px;
+    min-width: 52px;
+    margin-top: 5px ;
+  }
+
+  ul {
+    font-family: "Cabin", sans-serif;
+  }
+
+  #bottomPage {
+    margin-top: 130px;
   }
 
   #form {
@@ -20,13 +46,12 @@
     font-family: "Cabin", sans-serif;
     font-size: 15px;
     background: rgba(174, 174, 174, .5);
-  } */
+  }
 
-  label { width: 35%; display: inline-block;
-    text-align: right; max-width: 200px; margin-right: 5px;
-    margin-bottom: 8px; min-width: 52px; margin-top: 5px ;
-        }
-  input{display: inline-block;}
+  #hints {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 
   #menu {
     position: fixed;
@@ -40,23 +65,6 @@
     padding-right: 10px;
     margin-right: -5px;
     font-family: "Cabin", sans-serif;
-  }
-
-  h4 {
-    font-family: "Cabin", sans-serif;
-  }
-
-  ul {
-    font-family: "Cabin", sans-serif;
-  }
-
-  #hints {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  #bottomPage{
-    margin-top: 130px;
   }
 
 </style>
@@ -105,6 +113,7 @@
   {% if current_user %}
     <div id='form'>
       <form action="/add" method="post">
+        <label>Name (park name, street address, location name, etc): </label> <input name='name' size=60% required><br>
         <label>Location (approximate street address, city, state): </label> <input name='location' size=60% required><br><br>
         <label>Company (if known):</label> <input name='company'><br><br>
         <label>Type:</label>
@@ -119,23 +128,24 @@
       </form>
     </div>
 
-  <div id='hints'>
-    <h4> Helpful hints: </h4>
-    <ul>
-      <li> If the filler is in a park or other large public space, give your best guess as to the street address
-        and use the description section to describe what it's near (bathrooms, baseball diamonds, parking lots,
-        etc.)</li>
-      <li> Company refers to the company operating the water filler -- for example, many gallon fillers are
-        operated by Glacier Water. If you can't find the company, no worries!</li>
-      <li> For type: drinking fountains refer to drinking fountains and/or drinking fountains with attached spigots,
-        bottle fillers refer to machines like those in airports that generally have either a button or a sensor
-        and are specifically for filling water bottles, and gallon fillers refer to stations that are only used
-        to fill gallon pitchers. If you can't decide between options, take your best guess.</li>
-      <li> Please stick to fillers in public places. Pretty please. We aren't covering your legal fees if you
-        get caught on private property. We don't even pay to run this website.</li>
+    <div id='hints'>
+      <h4> Helpful hints: </h4>
+      <ul>
+        <li> If the filler is in a park or other large public space, give your best guess as to the street address
+          and use the description section to describe what it's near (bathrooms, baseball diamonds, parking lots,
+          etc.)</li>
+        <li> Company refers to the company operating the water filler -- for example, many gallon fillers are
+          operated by Glacier Water. If you can't find the company, no worries!</li>
+        <li> For type: drinking fountains refer to drinking fountains and/or drinking fountains with attached spigots,
+          bottle fillers refer to machines like those in airports that generally have either a button or a sensor
+          and are specifically for filling water bottles, and gallon fillers refer to stations that are only used
+          to fill gallon pitchers. If you can't decide between options, take your best guess.</li>
+        <li> Please stick to fillers in public places. Pretty please. We aren't covering your legal fees if you
+          get caught on private property. We don't even pay to run this website.</li>
+      </ul>
 
   {% else %}
-    <div id='LoginPlease'>Login to add filler!</div>
+    <div id='LoginPlease'>Log in to add filler!</div>
 
   {% endif %}
 
