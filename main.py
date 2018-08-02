@@ -177,7 +177,6 @@ class AddFiller(webapp2.RequestHandler):
             current_filler = Filler.query().filter(Filler.location == location).get()
 
             if not current_filler:
-<<<<<<< HEAD
                 ########picture = picture NOT ADDED YET
                 current_filler = Filler(name = name, location = location, type = type, description = description, company = company, current_user_email = current_user.email())
                 current_filler.put()
