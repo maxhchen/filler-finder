@@ -141,7 +141,7 @@
     </div>
 
     <div id='form'>
-      <form action="/add" method="post">
+      <form action="/add" enctype="multipart/form-data" method="post">
         <label> Name (park name, street address, location name, etc): </label>
           <span class='red'>*</span>
           <input name='name' size=60% required>
@@ -174,7 +174,7 @@
           <br>
         <label> Image of filler (optional): </label>
           <span> &nbsp;&nbsp; </span>
-          <input type='file' name='picture' accept='image/x-png,image/gif,image/jpeg' />
+          <input type='file' name='picture' accept='image/*' />
           <br>
           <br>
         <input id='submit' type= "submit" value= "Add Filler!" />
