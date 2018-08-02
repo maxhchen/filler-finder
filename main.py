@@ -38,10 +38,14 @@ class Filler(ndb.Model):
     #The creator's email address
     current_user_email = ndb.StringProperty()
 
+class APIkey(ndb.Model):
+    key = ndb.StringProperty()
 ######################################################################
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
+        apiKey = APIkey.query().get()
+
         login_url = "/"
         logout_url = "/"
         current_user = users.get_current_user()
@@ -58,12 +62,16 @@ class HomePage(webapp2.RequestHandler):
         "login_url" : login_url,
         "logout_url" : logout_url,
         "filler_list" : filler_list,
+        "apiKey" : apiKey,
         }
         template = env.get_template("templates/home.html")
         self.response.write(template.render(templateVars))
 
 class Description(webapp2.RequestHandler):
     def get(self):
+        #get API key from datastore
+        apiKey = APIkey.query().get()
+
         login_url = "/"
         logout_url = "/"
         current_user = users.get_current_user()
@@ -82,6 +90,7 @@ class Description(webapp2.RequestHandler):
         "login_url" : login_url,
         "logout_url" : logout_url,
         "filler" : filler,
+        "apiKey" : apiKey,
         }
 
         template = env.get_template("templates/description.html")
@@ -111,6 +120,7 @@ class Index(webapp2.RequestHandler):
 
 class AddFiller(webapp2.RequestHandler):
     def get(self):
+
         login_url = "/"
         logout_url = "/"
         current_user = users.get_current_user()
