@@ -1,6 +1,7 @@
 UI:
   Home/Add/About tab can hide and be pulled out
   Drop-down for info on Index Page
+  Consistent styling across pages
 
 Stretch Features:
   Implement filtering for locations https://appendto.com/2016/09/advanced-google-maps-with-javascript-filtering-and-displaying-information/
