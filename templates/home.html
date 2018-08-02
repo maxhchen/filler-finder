@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <meta charset='utf-8' />
-<title>FillerFinder</title>
 <link rel="icon" href="/images/droplet.png">
 <link rel='stylesheet' href='/stylesheets/style.css'>
 <link rel='stylesheet' href='/stylesheets/home.css'>
 <link href="https://fonts.googleapis.com/css?family=Cabin|Merienda" rel="stylesheet">
-
+<title>FillerFinder</title>
 
 <div id='topPage'>
   <!-- TITLE -->
@@ -42,34 +41,34 @@
 
 <!-- Prints map & list of locations in html to be converted to marker w/ JS -->
 <div id='map'>
-<script src = '/scripts/map.js'> </script>
-    <!-- Places marker based on the database -->
-    <script>
-    // Places marker for each filler in datastore
-      function markerPlacement() {
-        let marker;
-        {% for filler in filler_list %}
+  <script src = '/scripts/map.js'> </script>
+      <!-- Places marker based on the database -->
+      <script>
+      // Places marker for each filler in datastore
+        function markerPlacement() {
+          let marker;
+          {% for filler in filler_list %}
 
-          // Uses jinja2 to use relevant values from each filler while in html
-          marker_key = "/description?key={{ filler.key.urlsafe() }}";
-          placeMarker(geocoder, map, '{{filler.location}}', marker_key);
+            // Uses jinja2 to use relevant values from each filler while in html
+            marker_key = "/description?key={{ filler.key.urlsafe() }}";
+            placeMarker(geocoder, map, '{{filler.location}}', marker_key);
 
-        {% endfor %}
-      }
-    </script>
+          {% endfor %}
+        }
+      </script>
 
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA&callback=initMap">
-    </script>
+      <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA&callback=initMap">
+      </script>
 </div>
 
 <br>
 
 <div id='menu'>
-<ul>
-  <li> Home </li>
-  <li><a href="/index">Filler List</a></li>
-  <li><a href="/add">Add Filler!</a></li>
-  <li><a href="/about">About</a></li>
-</ul>
+  <ul>
+    <li> Home </li>
+    <li><a href="/index">Filler List</a></li>
+    <li><a href="/add">Add Filler!</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
 </div>
