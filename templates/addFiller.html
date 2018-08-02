@@ -7,9 +7,9 @@
 
 <style>
 
-  /* h3{
-    margin-top: -6px;
-  } */
+  .red {
+    color: red;
+  }
 
   h4 {
     font-family: "Cabin", sans-serif;
@@ -114,17 +114,37 @@
 
     <div id='form'>
       <form action="/add" method="post">
-        <label>Name (park name, street address, location name, etc): </label> <input name='name' size=60% required><br>
-        <label>Location (approximate street address, city, state): </label> <input name='location' size=60% required><br><br>
-        <label>Company (if known):</label> <input name='company'><br><br>
-        <label>Type:</label>
-        <select name="type">
-          <option value="Drinking Fountain">Drinking Fountain</option>
-          <option value="Bottle Filler">Bottle Filler</option>
-          <option value="Gallon Filler">Gallon Filler</option>
-        </select><br><br>
-        <label>Description of filler (the more info, the better!):</label> <input name='description'><br><br>
-        <input type="submit" value="Add Filler!"/>
+        <label> Name (park name, street address, location name, etc): </label>
+          <span class='red'>*</span>
+          <input name='name' size=60% required>
+          <br>
+        <label> Location (approximate street address, city, state): </label>
+          <span class='red'>*</span>
+          <input name='location' size=60% required>
+          <br>
+          <br>
+        <label> Company (if known): </label>
+        <span> &nbsp;&nbsp; </span>
+          <input name='company'>
+          <br>
+          <br>
+        <label> Type: </label>
+        <span class='red'>*</span>
+        <select name= "type" required>
+
+          <option value= "" selected disabled required>Choose one: </option>
+          <option value= "Drinking Fountain" > Drinking Fountain </option>
+          <option value= "Bottle Filler" > Bottle Filler </option>
+          <option value= "Gallon Filler" > Gallon Filler </option>
+        </select>
+        <br>
+        <br>
+        <label> Description of filler (the more info, the better!): </label>
+          <span class='red'>*</span>
+          <input name= 'description' required>
+          <br>
+          <br>
+          <input type= "submit" value= "Add Filler!" />
         <a href='/'> Or find one! <a>
       </form>
     </div>
