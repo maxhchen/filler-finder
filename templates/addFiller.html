@@ -75,10 +75,11 @@
     font-family: "Cabin", sans-serif;
   }
 
-  #descriptionBox{
-    padding-bottom: 10em;   width: 400px;
-    width: 400px;
-    word-wrap: break-all;
+   #descriptionBox{
+    border-radius: 10px;
+    display: inline-block;
+    border: 0 none lightgrey;
+    box-shadow: 0 0 20px lightgrey;
   }
 
   #submit{
@@ -169,7 +170,7 @@
         <br>
         <label> Description of filler (the more info, the better!): </label>
           <span class='red'>*</span>
-          <input id='descriptionBox' name= 'description' required>
+          <textarea rows="6" cols="50" id='descriptionBox' name= 'description' required></textarea>
           <br>
           <br>
           <input id='submit' type= "submit" value= "Add Filler!" />
