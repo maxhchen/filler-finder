@@ -156,7 +156,31 @@
     <div id="tom">
       <h4 id="p"><b>Tom Tan</b></h4>
       <p id="p"><i>Backend Programming</i></p>
-      <p id="p">I do stuff</p>
+      <p id="p">I <span id='tombio'>do</span> stuff</p>
       <br>
     </div>
 </div>
+
+<script>
+//VERY IMPORTANT DON'T TOUCH
+  function changeStuff() {
+    bio = document.querySelector('#tombio');
+    if (bio.innerHTML == 'do'){
+      bio.innerHTML = 'code';
+    }else if (bio.innerHTML == 'code'){
+      bio.innerHTML = 'write';
+    }else if (bio.innerHTML == 'write')
+    {
+      bio.innerHTML = 'cry about';
+    }else{
+      bio.innerHTML = 'do';
+    }
+
+    setTimeout(changeStuff, 2000);
+  };
+
+  changeStuff();
+
+
+
+</script>
