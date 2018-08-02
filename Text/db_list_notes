@@ -36,3 +36,9 @@ current_filler.put()
 
 comment = Comment(message='blah blah', user_key=current_user.key, filler_key=current_filler.key)
 comment.put()
+
+
+####
+apiKey = APIkey(key = 'AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA')
+apiKey.put()
+####
