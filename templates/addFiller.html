@@ -142,25 +142,24 @@
     </div>
 
     <div id='form'>
-      <form action="/add" method="post">
+      <form action="/add" enctype="multipart/form-data" method="post">
         <label> Name (park name, street address, location name, etc): </label>
           <span class='red'>*</span>
-          <input name='name' size=60% required>
+          <input name='name' size=60% required maxlength="75">
           <br>
         <label> Location (approximate street address, city, state): </label>
           <span class='red'>*</span>
-          <input name='location' size=60% required>
+          <input name='location' size=60% required maxlength="200">
           <br>
           <br>
         <label> Company (if known): </label>
         <span> &nbsp;&nbsp; </span>
-          <input name='company'>
+          <input name='company' maxlength="50">
           <br>
           <br>
         <label> Type: </label>
         <span class='red'>*</span>
         <select name= "type" required>
-
           <option value= "" selected disabled required>Choose one: </option>
           <option value= "Drinking Fountain" > Drinking Fountain </option>
           <option value= "Bottle Filler" > Bottle Filler </option>
@@ -170,12 +169,12 @@
         <br>
         <label> Description of filler (the more info, the better!): </label>
           <span class='red'>*</span>
-          <textarea rows="6" cols="50" id='descriptionBox' name= 'description' required></textarea>
+          <textarea rows="6" cols="50" id='descriptionBox' name= 'description' required maxlength="300"></textarea>
           <br>
           <br>
         <label> Image of filler (optional): </label>
           <span> &nbsp;&nbsp; </span>
-          <input type='file' name='picture' accept='image/x-png,image/gif,image/jpeg' />
+          <input type='file' name='picture' accept='image/*' />
           <br>
           <br>
         <input id='submit' type= "submit" value= "Add Filler!" />
