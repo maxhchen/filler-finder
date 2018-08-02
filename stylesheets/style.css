@@ -1,6 +1,9 @@
 /* this is organized!!! */
-a{ text-decoration: none;}
-a#homeButton:visited{
+a {
+  text-decoration: none;
+}
+
+a#homeButton:visited {
   color:black;
 }
 
@@ -17,6 +20,13 @@ h3 {
   font-family: "Cabin", sans-serif;
   font-size: 12px;
   padding: 5px;
+}
+
+input{
+  background-color: white;
+}
+button{
+  background-color: white;
 }
 
 #innerbox {

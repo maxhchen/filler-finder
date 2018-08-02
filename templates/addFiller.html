@@ -7,9 +7,10 @@
 
 <style>
 
-  /* h3{
-    margin-top: -6px;
-  } */
+<<<<<<< HEAD
+  h2 {
+    font-family: "Cabin", sans-serif;
+  }
 
   h4 {
     font-family: "Cabin", sans-serif;
@@ -17,6 +18,8 @@
 
   input {
     display: inline-block;
+    width: 35%;
+    border-radius: 4px;
   }
 
   label {
@@ -34,6 +37,10 @@
     font-family: "Cabin", sans-serif;
   }
 
+  .red {
+    color: red;
+  }
+
   #bottomPage {
     margin-top: 130px;
   }
@@ -41,11 +48,12 @@
   #form {
     background-color: lightgrey;
     padding: 10px;
-    max-width: 50%;
+    width: 700px;
     margin: 0 auto;
     font-family: "Cabin", sans-serif;
     font-size: 15px;
     background: rgba(174, 174, 174, .5);
+    box-shadow: 0 0 15px grey;
   }
 
   #hints {
@@ -66,6 +74,25 @@
     margin-right: -5px;
     font-family: "Cabin", sans-serif;
   }
+
+  #descriptionBox{
+    height: 15em;
+    width: 400px;
+
+  }
+  #submit{
+    margin-left: 300px;
+    height: 3em;
+    width: 80px;
+    margin-bottom: 10px;
+    font-size: 13px; padding: 1px;
+
+  }
+
+  #aFindOut{
+    margin-left: 300px;
+   }
+
 
 </style>
 
@@ -106,47 +133,71 @@
 
 
 <div id='bottomPage'>
-  <div id='header'>
-    <h3 align="center" style='font-size: 20px;'> Add a Filler! </h3>
-  </div>
 
   {% if current_user %}
+    <div id='header'>
+      <h3 align="center" style='font-size: 20px;'> Add a Filler! </h3>
+    </div>
+
     <div id='form'>
       <form action="/add" method="post">
-        <label>Name (park name, street address, location name, etc): </label> <input name='name' size=60% required><br>
-        <label>Location (approximate street address, city, state): </label> <input name='location' size=60% required><br><br>
-        <label>Company (if known):</label> <input name='company'><br><br>
-        <label>Type:</label>
-        <select name="type">
-          <option value="Drinking Fountain">Drinking Fountain</option>
-          <option value="Bottle Filler">Bottle Filler</option>
-          <option value="Gallon Filler">Gallon Filler</option>
-        </select><br><br>
-        <label>Description of filler (the more info, the better!):</label> <input name='description'><br><br>
-        <input type="submit" value="Add Filler!"/>
-        <a href='/'> Or find one! <a>
+        <label> Name (park name, street address, location name, etc): </label>
+          <span class='red'>*</span>
+          <input name='name' size=60% required>
+          <br>
+        <label> Location (approximate street address, city, state): </label>
+          <span class='red'>*</span>
+          <input name='location' size=60% required>
+          <br>
+          <br>
+        <label> Company (if known): </label>
+        <span> &nbsp;&nbsp; </span>
+          <input name='company'>
+          <br>
+          <br>
+        <label> Type: </label>
+        <span class='red'>*</span>
+        <select name= "type" required>
+
+          <option value= "" selected disabled required>Choose one: </option>
+          <option value= "Drinking Fountain" > Drinking Fountain </option>
+          <option value= "Bottle Filler" > Bottle Filler </option>
+          <option value= "Gallon Filler" > Gallon Filler </option>
+        </select>
+        <br>
+        <br>
+        <label> Description of filler (the more info, the better!): </label>
+          <span class='red'>*</span>
+          <input id='descriptionBox' name= 'description' required>
+          <br>
+          <br>
+          <input id='submit' type= "submit" value= "Add Filler!" />
+        <a id='aFindOut' href='/'> Or find one! <a>
       </form>
     </div>
 
     <div id='hints'>
       <h4> Helpful hints: </h4>
       <ul>
-        <li> If the filler is in a park or other large public space, give your best guess as to the street address
-          and use the description section to describe what it's near (bathrooms, baseball diamonds, parking lots,
+        <li> Name can refer to the name of the park the filler is in (ex. Central Park), the name of the specific location
+          (ex. Westfield Mall), or just the street address if neither of the other options applies. </li>
+        <li> If the filler is in a park or other large public space, use the closest street address or the latitude/longtitude
+          coordinates (can be found using Google Maps) and use the description section to describe what it's near (bathrooms, fields, parking lots,
           etc.)</li>
         <li> Company refers to the company operating the water filler -- for example, many gallon fillers are
           operated by Glacier Water. If you can't find the company, no worries!</li>
-        <li> For type: drinking fountains refer to drinking fountains and/or drinking fountains with attached spigots,
+        <li> For type: drinking fountains refer to drinking fountains with or without attached spigots,
           bottle fillers refer to machines like those in airports that generally have either a button or a sensor
           and are specifically for filling water bottles, and gallon fillers refer to stations that are only used
           to fill gallon pitchers. If you can't decide between options, take your best guess.</li>
-        <li> Please stick to fillers in public places. Pretty please. We aren't covering your legal fees if you
-          get caught on private property. We don't even pay to run this website.</li>
+        <li> Please stick to fillers in <b><u>PUBLIC</u></b> places. This really should be self explanatory but we are not responsible if you
+        get caught trespassing so please use common sense. :)</li>
       </ul>
 
   {% else %}
-    <div id='LoginPlease'>Log in to add filler!</div>
+    <div id='LoginPlease'><h2 align="center">Please log in to add a filler!</h2></div>
 
   {% endif %}
 
+</div>
 </div>
