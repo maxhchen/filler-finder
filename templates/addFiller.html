@@ -7,16 +7,13 @@
 
 <style>
 
-  /* h3{
-    margin-top: -6px;
-  } */
-
   h4 {
     font-family: "Cabin", sans-serif;
   }
 
   input {
     display: inline-block;
+    width: 35%
   }
 
   label {
@@ -41,7 +38,7 @@
   #form {
     background-color: lightgrey;
     padding: 10px;
-    max-width: 50%;
+    width: 700px;
     margin: 0 auto;
     font-family: "Cabin", sans-serif;
     font-size: 15px;
@@ -65,6 +62,12 @@
     padding-right: 10px;
     margin-right: -5px;
     font-family: "Cabin", sans-serif;
+  }
+
+  #descriptionBox{
+    height: 15em;
+    width: 400px;
+
   }
 
 </style>
@@ -113,7 +116,7 @@
   {% if current_user %}
     <div id='form'>
       <form action="/add" method="post">
-        <label>Location (approximate street address, city, state): </label> <input name='location' size=60% required><br><br>
+        <label>Location (approximate street address, city, state): </label><input name='location' size=60% required><br><br>
         <label>Company (if known):</label> <input name='company'><br><br>
         <label>Type:</label>
         <select name="type">
@@ -121,7 +124,7 @@
           <option value="Bottle Filler">Bottle Filler</option>
           <option value="Gallon Filler">Gallon Filler</option>
         </select><br><br>
-        <label>Description of filler (the more info, the better!):</label> <input name='description'><br><br>
+        <label>Description of filler (the more info, the better!):</label> <input id='descriptionBox' name='description'><br><br>
         <input type="submit" value="Add Filler!"/>
         <a href='/'> Or find one! <a>
       </form>
@@ -148,4 +151,5 @@
 
   {% endif %}
 
+</div>
 </div>
