@@ -1,4 +1,4 @@
-let API_KEY = 'AIzaSyADULoh4vZX2MsZs4SAgpTgOaXPbjsCNBA';
+
 let geocoder;
 let map;
 //Custom Marker image(s)
@@ -81,15 +81,23 @@ function codeAddress(geocoder, map) {
 }
 
 // Places correct marker based on filler datastore values
-function placeMarker(geocoder, map, address, marker_key) {
-  geocoder.geocode( {'address' : address}, function(results, status) {
-      marker = new google.maps.Marker ({
-        map: map,
-        icon: icon,
-        position: results[0].geometry.location,
-      });
-      marker.addListener("click", function() {
-        window.location.href=marker_key;
-      });
+function placeMarker(geocoder, map, address, marker_key)
+{
+  geocoder.geocode( {'address' : address}, function(results, status)
+  {
+      if (status == 'OK')
+      {
+        marker = new google.maps.Marker
+        ({
+          map: map,
+          icon: icon,
+          position: results[0].geometry.location,
+        });
+
+        marker.addListener("click", function()
+        {
+          window.location.href=marker_key;
+        });
+      }
   });
 }
