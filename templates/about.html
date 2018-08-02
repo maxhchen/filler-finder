@@ -122,13 +122,10 @@
     and maybe even more fun. Happy filling! :) </p>
 
   <h2> About Us: </h2>
-
-  TEMPLATE: [your name] is currently a freshman at [your school], majoring in [whatever ur major
-  is]. [was that really that hard guys]
     <div id="max">
       <h4><b>Maxwell Chen</b></h4>
       <p><i>Backend Programming</i></p>
-      <p>bio coming soon</p>
+      <p> Maxwell is an incoming freshman at UC Berkeley, planning to major in computer science and minor in electronic intelligent systems. Likes programming, neuroscience, and teaching.  </p>
       <br>
     </div>
     <div id="leo">
@@ -140,14 +137,38 @@
     <div id="ash">
       <h4><b>Ashlyn Mahoney</b></h4>
       <p><i>Frontend Programming</i></p>
-      <p>Ashlyn is currently a freshman at UC San Diego, majoring in computer science and considering
+      <p>A Bay Area native, Ashlyn is currently a freshman at UC San Diego, majoring in computer science and considering
       a minor in either environmental studies or photography (or both!). </p>
       <br>
     </div>
     <div id="tom">
       <h4><b>Tom Tan</b></h4>
       <p><i>Backend Programming</i></p>
-      <p>I do stuff</p>
+      <p>I <span id='tombio'>do</span> stuff</p>
       <br>
     </div>
 </div>
+
+<script>
+//VERY IMPORTANT DON'T TOUCH
+  function changeStuff() {
+    bio = document.querySelector('#tombio');
+    if (bio.innerHTML == 'do'){
+      bio.innerHTML = 'code';
+    }else if (bio.innerHTML == 'code'){
+      bio.innerHTML = 'write';
+    }else if (bio.innerHTML == 'write')
+    {
+      bio.innerHTML = 'cry about';
+    }else{
+      bio.innerHTML = 'do';
+    }
+
+    setTimeout(changeStuff, 2000);
+  };
+
+  changeStuff();
+
+
+
+</script>
