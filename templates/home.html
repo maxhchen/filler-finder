@@ -47,12 +47,14 @@
       // Places marker for each filler in datastore
         function markerPlacement() {
           let marker;
+          let delay = 100;
           {% for filler in filler_list %}
-
-            // Uses jinja2 to use relevant values from each filler while in html
-            marker_key = "/description?key={{ filler.key.urlsafe() }}";
-            placeMarker(geocoder, map, '{{filler.location}}', marker_key);
-
+          setTimeout(function(){
+              // Uses jinja2 to use relevant values from each filler while in html
+              marker_key = "/description?key={{ filler.key.urlsafe() }}";
+              placeMarker(geocoder, map, '{{filler.location}}', marker_key);
+            }, delay)
+            delay += 250;
           {% endfor %}
         }
       </script>
