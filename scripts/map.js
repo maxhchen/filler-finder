@@ -81,23 +81,17 @@ function codeAddress(geocoder, map) {
 }
 
 // Places correct marker based on filler datastore values
-function placeMarker(geocoder, map, address, marker_key)
-{
-  geocoder.geocode( {'address' : address}, function(results, status)
-  {
-      if (status == 'OK')
-      {
-        marker = new google.maps.Marker
-        ({
-          map: map,
-          icon: icon,
-          position: results[0].geometry.location,
-        });
-
-        marker.addListener("click", function()
-        {
-          window.location.href=marker_key;
-        });
-      }
+function placeMarker(geocoder, map, address, marker_key) {
+  console.log("placeMarker " + address);
+  geocoder.geocode( {'address' : address}, function(results, status) {
+    console.log("placeMarker geocoder result: ", results);
+      marker = new google.maps.Marker ({
+        map: map,
+        icon: icon,
+        position: results[0].geometry.location,
+      });
+      marker.addListener("click", function() {
+        window.location.href=marker_key;
+      });
   });
 }
