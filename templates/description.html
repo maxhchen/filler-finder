@@ -90,7 +90,11 @@
     <p><u>Name:</u> {{ filler.name }} </p>
     <p><u>Location:</u> {{ filler.location }} </p>
     <p><u>Type:</u> {{ filler.type }} </p>
+    {% if filler.company == "" %}
+    <p><u>Company:</u> N/A </p>
+    {% else %}
     <p><u>Company:</u> {{ filler.company }}</p>
+    {% endif %}
     <p><u>Description:</u> {{ filler.description }} </p>
 <!--    <p><u>Picture:</u> <img src="{{ filler.picture }}"> </img> </p>   -->
 <!--    <p><u>Added By:</u> {{ filler.current_user_email }} </p>    -->
