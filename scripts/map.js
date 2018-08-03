@@ -82,7 +82,9 @@ function codeAddress(geocoder, map) {
 
 // Places correct marker based on filler datastore values
 function placeMarker(geocoder, map, address, marker_key) {
+  console.log("placeMarker " + address);
   geocoder.geocode( {'address' : address}, function(results, status) {
+    console.log("placeMarker geocoder result: ", results);
       marker = new google.maps.Marker ({
         map: map,
         icon: icon,

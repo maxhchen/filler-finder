@@ -65,6 +65,8 @@ class HomePage(webapp2.RequestHandler):
 
         filler_list = Filler.query().fetch()
 
+        print("received" + str(len(filler_list)))
+
         templateVars = {
         "current_user" : current_user,
         "login_url" : login_url,
