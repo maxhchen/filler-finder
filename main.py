@@ -30,7 +30,7 @@ class Filler(ndb.Model):
     name = ndb.StringProperty()
     type = ndb.StringProperty()
     location = ndb.StringProperty()
-    picture = ndb.BlobProperty()
+    #picture = ndb.BlobProperty()
     description = ndb.StringProperty()
     company = ndb.StringProperty()
     #The creator's email address
@@ -165,7 +165,7 @@ class AddFiller(webapp2.RequestHandler):
         type = self.request.get('type')
         description = self.request.get('description')
         company = self.request.get('company')
-        picture = self.request.get('picture')
+        #picture = self.request.get('picture')
 #        picture = images.resize(picture, 50, 50)
 
         #Get the email of the current user so their email can be added to the "Added By:" section of the description page
@@ -174,7 +174,7 @@ class AddFiller(webapp2.RequestHandler):
         if current_user and current_person and current_person.limit < 50:
 
             #Check whether or not there is an existing filler if not, add one
-            current_filler = Filler.query().filter(Filler.location == location).get()
+            current_filler = Filler.query().filter(Filler.name == name).get()
 
             if not current_filler:
                 ########picture = picture NOT ADDED YET
