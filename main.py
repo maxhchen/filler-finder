@@ -173,7 +173,7 @@ class AddFiller(webapp2.RequestHandler):
         #Get the email of the current user so their email can be added to the "Added By:" section of the description page
         current_user = users.get_current_user()
         #Check if user exist and if they have an account and it they have exceeded their limits
-        if current_user and current_person and current_person.limit < 50:
+        if current_user and current_person and current_person.limit < 5:
 
             #Check whether or not there is an existing filler if not, add one
             current_filler = Filler.query().filter(Filler.name == name).get()
